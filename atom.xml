@@ -6,7 +6,7 @@
   <link href="http://wstcly.xyz/atom.xml" rel="self"/>
   
   <link href="http://wstcly.xyz/"/>
-  <updated>2024-06-30T09:42:44.273Z</updated>
+  <updated>2024-06-30T12:56:11.873Z</updated>
   <id>http://wstcly.xyz/</id>
   
   <author>
@@ -15,6 +15,480 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wstcly.xyz/2024/06/30/main2048-js/"/>
+    <id>http://wstcly.xyz/2024/06/30/main2048-js/</id>
+    <published>2024-06-30T12:56:23.428Z</published>
+    <updated>2024-06-30T12:56:11.873Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="main2048-js"><a href="#main2048-js" class="headerlink" title="main2048.js"></a>main2048.js</h1><p><a href="./file/main2048.js">main2048.js</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;main2048-js&quot;&gt;&lt;a href=&quot;#main2048-js&quot; class=&quot;headerlink&quot; title=&quot;main2048.js&quot;&gt;&lt;/a&gt;main2048.js&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;./file/main2048.js&quot;&gt;main2</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wstcly.xyz/2024/06/30/file/main2048/"/>
+    <id>http://wstcly.xyz/2024/06/30/file/main2048/</id>
+    <published>2024-06-30T11:26:12.442Z</published>
+    <updated>2024-06-30T11:26:03.343Z</updated>
+    
+    <content type="html"><![CDATA[// JavaScript Documentvar board=new Array();var score=0;function init(){for(var i=0;i<4;i++)  for(var j=0;j<4;j++){$("#"+i+j).css("top",getTop(i,j));$("#"+i+j).css("left",getLeft(i,j));}}function newgame(){init();}$(document).ready(function(){newgame();});]]></content>
+    
+    
+      
+      
+    <summary type="html">// JavaScript Document
+var board=new Array();
+var score=0;
+function init()
+{
+	for(var i=0;i&lt;4;i++)
+	  for(var j=0;j&lt;4;j++)
+	{
+	$(&quot;#&quot;+i+j).cs</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10年变化</title>
+    <link href="http://wstcly.xyz/2024/06/30/10-nian-bian-hua/"/>
+    <id>http://wstcly.xyz/2024/06/30/10-nian-bian-hua/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:59:01.430Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="10年变化"><a href="#10年变化" class="headerlink" title="10年变化"></a>10年变化</h1><p>2019&#x2F;2&#x2F;3 21:00  星期日 晴</p><p>    <em>淅淅沥沥的雨声伴随了昨晚一整晚的睡眠，夜半梦醒，听到耳边传来窗外的雨声，仿佛春雨般让人心情舒畅，享受了半刻便有沉沉的睡去。</em></p><p>_    清晨，让人讶异的事情：外面竟没有一丝雨后的气息，昨日阴沉的天空明明为这场雨做了最好的铺垫，然而善变的冬季却来了一个最大的转折。让人意想不到的是这雨竟然是水龙头假扮的。它竟悄悄的打开了强加在自己头上的枷锁，给了这家的主人一个并不开心的惊喜。街头那长长的拦在街坊邻里中间的水龙就是这一页“雨”的成果。_</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;10年变化&quot;&gt;&lt;a href=&quot;#10年变化&quot; class=&quot;headerlink&quot; title=&quot;10年变化&quot;&gt;&lt;/a&gt;10年变化&lt;/h1&gt;&lt;p&gt;2019&amp;#x2F;2&amp;#x2F;3 21:00  星期日 晴&lt;/p&gt;
+&lt;p&gt;    &lt;em&gt;淅淅沥沥的雨声伴随了昨</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://wstcly.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019元日</title>
+    <link href="http://wstcly.xyz/2024/06/30/2019-yuan-ri/"/>
+    <id>http://wstcly.xyz/2024/06/30/2019-yuan-ri/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:59:14.326Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2019元日"><a href="#2019元日" class="headerlink" title="2019元日"></a>2019元日</h1><p><img src="https://wstcly.top/picgo/s90122-182703.jpg" alt="s90122-182703.jpg"></p><p>2019&#x2F;2&#x2F;5 21:28  周二 晴</p><hr><p>  新年也给自己一个么么哒＾3＾</p><p>  今天和很久没见的朋友重聚一面，又将是新一次各奔东西。像是一个循环，年复一年，不同只是大家都在变化，有好有坏。</p><p>  花有重开日，人无再少年，每一次相聚都像青春般值得留恋，值得珍惜。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;2019元日&quot;&gt;&lt;a href=&quot;#2019元日&quot; class=&quot;headerlink&quot; title=&quot;2019元日&quot;&gt;&lt;/a&gt;2019元日&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://wstcly.top/picgo/s90122-182703.jpg&quot; </summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://wstcly.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos7安装RabbitMQ</title>
+    <link href="http://wstcly.xyz/2024/06/30/centos7-an-zhuang-rabbitmq-jian-shu/"/>
+    <id>http://wstcly.xyz/2024/06/30/centos7-an-zhuang-rabbitmq-jian-shu/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:54:54.056Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Centos7安装RabbitMQ"><a href="#Centos7安装RabbitMQ" class="headerlink" title="Centos7安装RabbitMQ"></a>Centos7安装RabbitMQ</h1><p><a href="https://www.jianshu.com/u/b890fe5e2ec1"><img src="https://wstcly.top/picgo/webp.webp" alt="webp.webp"></a></p><p><a href="https://www.jianshu.com/u/b890fe5e2ec1">Rumple</a></p><p>2019.05.22 13:04:38字数 12阅读 4,023</p><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><pre class="language-none"><code class="language-none"># 准备yum updateyum install epel-releaseyum install gcc gcc-c++ glibc-devel make ncurses-devel openssl-devel autoconf java-1.8.0-openjdk-devel git wget wxBase.x86_64# 安装erlangyum install -y erlang# 安装rabbitmqwget https:&#x2F;&#x2F;github.com&#x2F;rabbitmq&#x2F;rabbitmq-server&#x2F;releases&#x2F;download&#x2F;v3.7.15&#x2F;rabbitmq-server-3.7.15-1.el7.noarch.rpm# 导入秘钥rpm --import https:&#x2F;&#x2F;www.rabbitmq.com&#x2F;rabbitmq-release-signing-key.asc# 安装yum install rabbitmq-server-3.7.15-1.el7.noarch.rpm1234567891011121314151617181920</code></pre><h2 id="二、操作"><a href="#二、操作" class="headerlink" title="二、操作"></a>二、操作</h2><pre class="language-none"><code class="language-none">systemctl start rabbitmq-server# 设置开机启动systemctl enable rabbitmq-server12345</code></pre><h2 id="三、管理"><a href="#三、管理" class="headerlink" title="三、管理"></a>三、管理</h2><pre class="language-none"><code class="language-none">rabbitmq默认的工作端口为256721</code></pre><pre class="language-none"><code class="language-none"># 启用web管理界面rabbitmq-plugins enable rabbitmq_management# guest用户只能用于localhost访问# 添加新用户及授权rabbitmqctl add_user fort fortrabbitmqctl set_user_tags fort administratorrabbitmqctl set_permissions -p &#x2F; fort &#39;.*&#39; &#39;.*&#39; &#39;.*&#39;rabbitmqctl list_permissions# 访问ip:15672即可进入管理界面12345678910111213141516</code></pre><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’375’%3e%3cpath d&#x3D;’M728.064 343.943529c-17.648941-2.891294-23.552-20.239059-26.503529-28.912941V104.026353C701.560471 46.200471 654.396235 0 595.425882 0c-53.007059 0-97.28 40.478118-106.134588 89.569882-29.997176 184.862118-138.541176 255.457882-217.630118 280.937412a26.142118 26.142118 0 0 0-18.130823 24.877177v560.067764c0 19.817412 16.022588 35.84 35.84 35.84h535.973647c56.018824-11.565176 94.328471-31.804235 120.892235-86.738823l120.832-416.105412c23.552-75.173647-14.757647-147.395765-100.231529-144.564706h-238.772706z m-571.813647 31.744H76.619294C35.358118 375.687529 0 410.383059 0 450.861176v462.426353c0 43.369412 32.406588 78.004706 76.619294 78.004706h79.631059c27.708235 0 50.115765-22.407529 50.115765-50.115764V425.863529a50.115765 50.115765 0 0 0-50.115765-50.115764z’ data-evernote-id&#x3D;’153’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em><br>0人点赞_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ viewBox&#x3D;’64 64 896 896’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-icon&#x3D;’right’ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ data-evernote-id&#x3D;’379’%3e%3cpath d&#x3D;’M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z’ data-evernote-id&#x3D;’380’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)_</p><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’384’%3e%3cpath d&#x3D;’M771.413333 668.728889c-18.773333 3.015111-25.031111 20.878222-28.16 29.866667v217.884444c0 59.733333-49.948444 107.52-112.412444 107.52a115.427556 115.427556 0 0 1-112.412445-92.558222c-31.857778-190.919111-146.830222-263.850667-230.627555-290.133334a27.420444 27.420444 0 0 1-19.228445-26.168888V37.944889C268.572444 17.066667 285.582222 0 306.631111 0h567.864889c59.335111 11.946667 99.953778 32.824889 128 89.543111l128.113778 429.909333c24.974222 77.653333-15.644444 152.291556-106.211556 149.276445H771.413333z m-605.866666-32.824889H81.180444C37.546667 635.904 0 600.064 0 558.250667V80.611556C0 35.84 34.360889 0 81.180444 0H165.546667c29.297778 0 53.077333 23.779556 53.077333 53.077333v529.749334a53.077333 53.077333 0 0 1-53.077333 53.077333z’ data-evernote-id&#x3D;’132’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p><a href="https://www.jianshu.com/nb/37219629">_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’http://www.w3.org/2000/svg' width='1em' height='1em' fill='currentColor' aria-hidden='true' focusable='false' class='js-evernote-checked' data-evernote-id='389'%3e%3cpath d='M178.390055 120.591045C111.268624 120.591045 56.888889 174.401955 56.888889 240.556383V903.97778C56.888889 970.302855 111.097977 1024 178.390055 1024h545.731364c67.121431 0 121.558049-53.81091 121.558049-120.02222V240.613265c0-66.268192-54.209088-120.02222-121.558049-120.02222H178.390055z m455.117432 301.136319H269.06087a30.147761 30.147761 0 0 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z m303.18409 301.136318a30.318409 30.318409 0 0 1-30.375291-30.318409V180.317742c0-66.268192-53.81091-120.02222-121.330519-120.022219H329.697688a30.147761 30.147761 0 0 1 0-60.23864l454.946784 0.056882C885.326618 0.113765 967.009987 80.887013 967.009987 180.602155v511.943118a30.318409 30.318409 0 0 1-30.31841 30.318409z m-303.18409-120.47728H269.06087a30.147761 30.147761 0 1 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z' data-evernote-id='143' class='js-evernote-checked'%3e%3c/path%3e%3c/svg%3e)_系统配置</a><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’395’%3e%3cpath d&#x3D;’M232.727273 579.87878833C271.28679 579.87878833 302.545455 548.62012233 302.545455 510.06060633 302.545455 471.50108933 271.28679 440.24242433 232.727273 440.24242433 194.167756 440.24242433 162.909091 471.50108933 162.909091 510.06060633 162.909091 548.62012233 194.167756 579.87878833 232.727273 579.87878833ZM512 579.87878833C550.559516 579.87878833 581.818182 548.62012233 581.818182 510.06060633 581.818182 471.50108933 550.559516 440.24242433 512 440.24242433 473.440484 440.24242433 442.181818 471.50108933 442.181818 510.06060633 442.181818 548.62012233 473.440484 579.87878833 512 579.87878833ZM791.272727 579.87878833C829.832243 579.87878833 861.090909 548.62012233 861.090909 510.06060633 861.090909 471.50108933 829.832243 440.24242433 791.272727 440.24242433 752.713211 440.24242433 721.454545 471.50108933 721.454545 510.06060633 721.454545 548.62012233 752.713211 579.87878833 791.272727 579.87878833Z’ data-evernote-id&#x3D;’99’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p>“小礼物走一走，来简书关注我”<br>还没有人赞赏，支持一下</p><p><a href="https://www.jianshu.com/u/b890fe5e2ec1"><img src="https://wstcly.top/picgo/webp-1.webp" alt="webp-1.webp"></a></p><p><a href="https://www.jianshu.com/u/b890fe5e2ec1" title="Rumple">Rumple</a>why so serious？why so serious？</p><p>总资产1 (约0.08元)共写了1307字获得5个赞共0个粉丝</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Centos7安装RabbitMQ&quot;&gt;&lt;a href=&quot;#Centos7安装RabbitMQ&quot; class=&quot;headerlink&quot; title=&quot;Centos7安装RabbitMQ&quot;&gt;&lt;/a&gt;Centos7安装RabbitMQ&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;h</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="政企" scheme="http://wstcly.xyz/tags/%E6%94%BF%E4%BC%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP请求方法</title>
+    <link href="http://wstcly.xyz/2024/06/30/http-qing-qiu-fang-shi-zhong-8-chong-qing-qiu-fang-fa-jian-dan-jie-shao/"/>
+    <id>http://wstcly.xyz/2024/06/30/http-qing-qiu-fang-shi-zhong-8-chong-qing-qiu-fang-fa-jian-dan-jie-shao/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:55:28.959Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTTP请求方式中8种请求方法（简单介绍）"><a href="#HTTP请求方式中8种请求方法（简单介绍）" class="headerlink" title="HTTP请求方式中8种请求方法（简单介绍）"></a>HTTP请求方式中8种请求方法（简单介绍）</h1><p><img src="https://wstcly.top/picgo/1418466-20180810112625596-2103906128.png" alt="1418466-20180810112625596-2103906128.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;HTTP请求方式中8种请求方法（简单介绍）&quot;&gt;&lt;a href=&quot;#HTTP请求方式中8种请求方法（简单介绍）&quot; class=&quot;headerlink&quot; title=&quot;HTTP请求方式中8种请求方法（简单介绍）&quot;&gt;&lt;/a&gt;HTTP请求方式中8种请求方法（简单介绍）&lt;/</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="http" scheme="http://wstcly.xyz/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js基础</title>
+    <link href="http://wstcly.xyz/2024/06/30/javascript/"/>
+    <id>http://wstcly.xyz/2024/06/30/javascript/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:55:54.287Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p><strong>插入<script>javascript code</script></strong></p><p>引入外部文件：<script src="script.js"></script></p><p>javaScript文件可放在文件的任何位置，但一般放在head标签内<img src="https://wstcly.top/picgo/52a6ad240001086506440600.png" alt="52a6ad240001086506440600.png"></p><p>d或body中。</p><p><strong>函数</strong></p><p><strong>function 函数名(参数1，参数2)</strong></p><p>{     函数代码;</p><p><strong>注：参数无需定义，可直接使用   function add(x,y){};</strong></p><p><strong>函数调用：</strong></p><p><strong>第一种情况:在<script>标签内调用。</strong></p><p><strong>add2();</strong>//调用函数，直接写函数名</p><p>**第二种情况:**在HTML文件中调用，如通过点击按钮后调用定义好的函数。</p><p><strong><input type="button" value="显示文字" onclick="函数名（）" /></strong></p><p><strong>输出：document.write(内容或变量+内容+"标签"。。。)；</strong></p><p>警告（alert 消息对话框）</p><p>语法： **  alert(字符串或变量);�**�</p><p><strong>注意:</strong></p><ol><li><p>在点击对话框"确定"按钮前，不能进行任何其它操作。</p></li><li><p>消息对话框通常可以用于调试程序。</p></li><li><p>alert输出内容，可以是字符串或变量，与document.write 相似。</p></li></ol><p>确认（confirm 消息对话框）</p><p> 语法：confirm(str);</p><p><strong>str：</strong>在消息对话框中要显示的文本<strong>返回值:�</strong>�Boolean值</p><p>提问：（prompt 消息对话框）</p><p>语法：prompt(str1,str2);</p><p><strong>参数说明：</strong></p><p>str1: 要显示在消息对话框中的文本，不可修改</p><p>str2：文本框中的内容，可以修改</p><p><strong>返回值:</strong></p><p>1. 点击确定按钮，文本框中的内容将作为函数返回值2. 点击取消按钮，将返回<strong>null</strong></p><p>打开新窗口（window.open）</p><p><strong>语法：</strong></p><p>window.open([URL], [窗口名称], [参数字符串])</p><p><strong>参数说明:</strong></p><p><strong>URL：</strong>可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。</p><p><strong>窗口名称：</strong>可选参数，被打开窗口的名称。</p><p>    1.该名称由字母、数字和下划线字符组成。</p><p>    2."_top"、"_blank"、"_selft"具有特殊意义的名称。</p><p>       _blank：在新窗口显示目标网页</p><p>       _self：在当前窗口显示目标网页</p><p>       _top：框架网页中在上部窗口中显示目标网页</p><p>    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</p><p>    4.name 不能包含有空格。<strong>参数字符串：</strong>可选参数，设置窗口参数，各参数用逗号隔开。</p><p><img src="https://wstcly.top/picgo/52e3677900013d6a05020261.jpg" alt="52e3677900013d6a05020261.jpg"></p><p>例如：<script type="text/javascript"> window.open('<a href="http://www.imooc.com','_blank','width=300,height=200,menubar=no,toolbar=no/">http://www.imooc.com&#39;,&#39;_blank&#39;,&#39;width=300,height=200,menubar=no,toolbar=no</a>, status=no,scrollbars=yes')</script></p><p>注意参数字符串</p><p>关闭窗口（window.close）</p><p><strong>用法：</strong></p><p>window.close();   &#x2F;&#x2F;关闭本窗口</p><p>或</p><p>&lt;窗口对象&gt;.close();   &#x2F;&#x2F;关闭指定的窗口&#96;&#96;&#96;<br> var mywin&#x3D;window.open(‘<a href="http://www.imooc.com/">http://www.imooc.com</a>‘); &#x2F;&#x2F;将新打的窗口对象，存储在变量mywin中<br>   mywin.close();</p><pre class="language-none"><code class="language-none">通过ID获取元素**语法:**** document.getElementById(“id”)�**�     **结果:null****或[****object HTMLParagraphElement]**innerHTML 属性innerHTML 属性用于获取或替换 HTML 元素的内容。进行赋值或输出。**语法:****Object.innerHTML&#x3D;&quot;新内容&quot;;****注意:**1.Object是获取的元素对象，如通过document.getElementById(&quot;ID&quot;)获取的元素。2.注意书写，innerHTML区分大小写。**我们通过id&#x3D;&quot;con&quot;获取&lt;p&gt; 元素，并将元素的内容输出和改变元素内容**改变 HTML 样式**Object.style.property&#x3D;new style;**![52e4d4240001dd6c04850229.jpg](image&#x2F;52e4d4240001dd6c04850229.jpg)显示和隐藏（display属性）网页中经常会看到显示和隐藏的效果，可通过display属性来设置。**语法：**</code></pre><p>Object.style.display &#x3D; value</p><pre class="language-none"><code class="language-none">**注意:**Object是获取的元素对象，如通过document.getElementById(&quot;id&quot;)获取的元素。**value取****值:****[![79da77cd3e18a810267c1d61a80a4ebb.jpg](image&#x2F;79da77cd3e18a810267c1d61a80a4ebb.jpg)](http:&#x2F;&#x2F;img.mukewang.com&#x2F;52e4dba5000179da04110095.jpg)**![52e4dcf50001bead09310689.jpg](image&#x2F;52e4dcf50001bead09310689.jpg)控制类名（className 属性）object.className&#x3D;&quot;classname&quot;;object.calssName返回类名    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;       function add()&#123;          var p1 &#x3D; document.getElementById(&quot;p1&quot;);          p1.className&#x3D;&quot;one&quot;;       &#125;       function modify()&#123;          var p2 &#x3D; document.getElementById(&quot;p2&quot;);          p2.className&#x3D;&quot;two&quot;;       &#125;    &lt;&#x2F;script&gt;变量 var 变量名操作符：。。。数组： var myarr&#x3D;new Array(); &#x2F;&#x2F;定义数组 myarr[0]&#x3D;80; myarr[1]&#x3D;60; myarr[2]&#x3D;99; 我们创建数组的同时，还可以为数组指定长度，长度可任意指定。</code></pre><p>var myarray&#x3D; new Array(8); &#x2F;&#x2F;创建数组，存储8个数据。 </p><pre class="language-none"><code class="language-none">**注意：**1.创建的新数组是空数组，没有值，如输出，则显示undefined。2.虽然创建数组时，指定了长度，但实际上数组都是变长的，也就是说即使指定了长度为8，仍然可以将元素存储在规定长度以外。 **初始化方法：**第一种方法：</code></pre><p>var myarray &#x3D; new Array(66,80,90,77,59);&#x2F;&#x2F;创建数组同时赋值</p><pre class="language-none"><code class="language-none">第二种方法：</code></pre><p> var myarray &#x3D; [66,80,90,77,59];&#x2F;&#x2F;直接输入一个数组（称 “字面量数组”）</p><pre class="language-none"><code class="language-none">**注意：**数组存储的数据可以是任何类型（数字、字符、布尔值等）数组的操作：**数组名.length;&#x2F;&#x2F;获取数组长度**同时，JavaScript数组的length属性是可变的，这一点需要特别注意。arr.length&#x3D;10; &#x2F;&#x2F;增大数组的长度document.write(arr.length); &#x2F;&#x2F;数组长度已经变为10**二维数组：**var myarr&#x3D;new Array();  &#x2F;&#x2F;先声明一维 for(var i&#x3D;0;i&lt;2;i++)&#123;   &#x2F;&#x2F;一维长度为2   myarr[i]&#x3D;new Array();  &#x2F;&#x2F;再声明二维    for(var j&#x3D;0;j&lt;3;j++)&#123;   &#x2F;&#x2F;二维长度为3   myarr[i][j]&#x3D;i+j;   &#x2F;&#x2F; 赋值，每个数组元素的值为i+j   &#125; &#125;2. **二维数组的定义方法二**var Myarr &#x3D; [[0 , 1 , 2 ],[1 , 2 , 3, ]]**事件：**![53e198540001b66404860353.png](image&#x2F;53e198540001b66404860353.png)一、 鼠标单击事件：onclick 一般和按钮配合使用&lt;input type&#x3D;&quot;button&quot;,value&#x3D;&quot;显示内容&quot;,onclick&#x3D;&quot;函数名&quot; &#x2F;&gt;二、鼠标经过事件：onmousehover三、鼠标离开事件：onmouseout四、光标聚焦事件 ：onfocus 五、失焦事件：onblur六、内容选中事件：onselect七、内容改变事件：onchange八、加载事件：onload  写在body标签事件内九、卸载事件：onunload**对象：****访问对象属性：objName.properName****访问对象方法：objName.methName****日期 Date对象：**定义：var Udate&#x3D;new Date(); 如果要自定义初始值，可以用以下方法：</code></pre><p>var d &#x3D; new Date(2012, 10, 1);  &#x2F;&#x2F;2012年10月1日<br>var d &#x3D; new Date(‘Oct 1, 2012’); &#x2F;&#x2F;2012年10月1日</p><pre class="language-none"><code class="language-none">我们最好使用下面介绍的“方法”来严格定义时间。![555c650d0001ae7b04180297.png](image&#x2F;555c650d0001ae7b04180297.png)var mydate&#x3D;new Date();mydate.get&#x2F;setFullYear(); var weekday&#x3D;[&quot;星期日&quot;,&quot;星期一&quot;,&quot;星期二&quot;,&quot;星期三&quot;,&quot;星期四&quot;,&quot;星期五&quot;,&quot;星期六&quot;];  document.write(&quot;今天是：&quot; + weekday[mydate.getDay()]);mydate.setTime(mydate.getTime()+60*60*1000);&#x2F;&#x2F;推迟1小时**String 字符串对象：****定义：var mystr&#x3D;&quot;I love S.Z !&quot;****属性：length 、**方法：**parseInt(字符);    toUpperCase();  toLowerCase(); charAt(int)**&#x2F;&#x2F;int若不再合理范围内，返回空字符**indexOf(&#39;a&#39;,startpos);**&#x2F;&#x2F;查找 指定字符的首次出现的位置，失败返回-1eg：  var mystr&#x3D;&quot;Hello World!&quot;  document.write(mystr.indexOf(&quot;o&quot;,mystr.indexOf(&quot;o&quot;)+1));&#x2F;&#x2F;查找第二个字母出现的位置**split(&quot;指定的分割符&quot;，分割次数);&#x2F;**&#x2F;分割次数为可选参数 &#x2F;&#x2F;取“”,则每个字符均分割**substring(starPos,stopPos);**starPos必选（不选则为全部选取），stopPos可选  提取下标之间的字符串**注意：**1. 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start。2. 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。3. 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。**substr(starPos,length);**(必需，可选)可选若忽略，则为全部字符。**注意：**如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。如果startPos为负数且绝对值大于字符串长度，startPos为0。**Math对象****提供对数据的数学运算****注意：**Math 对象是一个固有的对象，无需创建它，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。对象属性**![532fe7cf0001e7b505170269.png](image&#x2F;532fe7cf0001e7b505170269.png)**对象方法![532fe841000174db05160622.png](image&#x2F;532fe841000174db05160622.png)向上取整：ceil(float);返回大于等于该值的整数向下取整：floor（float）；四舍五入：round（float）； . 如果 x 与两侧整数同等接近，则结果接近 +∞方向的数字值 。(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6)随机数生成：random()&#x2F;&#x2F;生成0~1的随机数**数组对象**方法：![533295ab0001dead05190599.png](image&#x2F;533295ab0001dead05190599.png)**obj.concat(字符串，数组)；**不改变原数组**obj.join(“.”);**将数组元素串成一个字符串，返回，不改变原数组元素(用点连接)**obj.reverse();**颠倒数组元素的顺序，改变了原数组**obj.slice(start,end）;**1.返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。2. 该方法并不会修改数组，而是返回一个子数组。3. String.slice() 与 Array.slice() 相似。**obj.sort(方法函数);**</code></pre><p>myArray.sort(sortMethod);</p><pre class="language-none"><code class="language-none">**注意:�**�该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：        若返回值&lt;&#x3D;-1，则表示 A 在排序后的序列中出现在 B 之前。  若返回值&gt;-1 &amp;&amp; &lt;1，则表示 A 和 B 具有相同的排序顺序。  若返回值&gt;&#x3D;1，则表示 A 在排序后的序列中出现在 B 之后。function name()&#123;  return  a-b;&#x2F;&#x2F;若降序，return b-a;&#125;Window对象  window对象是BOM的核心，window对象指当前的浏览器窗口。Window 对象方法![535483720001a54506670563.jpg](image&#x2F;535483720001a54506670563.jpg)**JS计时器**在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。**计时器类型：**一次性计时器：仅在指定的延迟时间之后触发一次。间隔性触发计时器：每隔一定的时间间隔就触发一次。**![56976e1700014fc504090143.jpg](image&#x2F;56976e1700014fc504090143.jpg)**setInterval(函数名，毫秒)；setTimeout(函数或代码，毫秒)；通过setTimeout(函数中潜嵌套setTimeout（），毫秒)&#x2F;&#x2F;达到无穷循环的效果**History对象**history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。**注意:从**窗口**被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。****语法：**</code></pre><p>window.history.[属性|方法]</p><pre class="language-none"><code class="language-none">**注意：**window可以省略。**属性：****length:打开URL的数量****方法:****back（）加载history列表的前一个URL&#x2F;&#x2F;相当于go(-1);****forward() 加载history 列表的下一个URL&#x2F;&#x2F;相当于go(1);****go(int(如1,0,-1)) 加载history列表的某个具体的页面****Location对象**location用于获取或设置窗体的URL，并且可以用于解析URL。**语法:**location.[属性|方法]**location对象属性图示****![53605c5a0001b26909900216.png](image&#x2F;53605c5a0001b26909900216.png)****location对象属性****![5354b1d00001c4ec06220271.jpg](image&#x2F;5354b1d00001c4ec06220271.jpg)****location对象方法****![5354b1eb00016a2405170126.jpg](image&#x2F;5354b1eb00016a2405170126.jpg)****Navigator对象**Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。**对象属性****![5354cff70001428b06880190.jpg](image&#x2F;5354cff70001428b06880190.jpg)****document.write(navigator.appName);****navigator. userAgent   **返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)******screen对象****window.screen.属性****对象属性：****![5354d2810001a47706210213.jpg](image&#x2F;5354d2810001a47706210213.jpg)****认识DOM****文档对象模型**文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。**HTML****文档可以说由节点构成的集合，DOM节点有:****1.�**�**元素节点：**上图中&lt;html&gt;、&lt;body&gt;、&lt;p&gt;等都是元素节点，即标签。**2.�**�**文本节点:**向用户展示的内容，如&lt;li&gt;...&lt;&#x2F;li&gt;中的JavaScript、DOM、CSS等文本。**3.�**�**属性节点:**元素属性，如&lt;a&gt;标签的链接属性href&#x3D;&quot;http:&#x2F;&#x2F;www.imooc.com&quot;。**节点属性:![5375c953000117ee05240129.jpg](image&#x2F;5375c953000117ee05240129.jpg)****遍历节点树：![53f17a6400017d2905230219.png](image&#x2F;53f17a6400017d2905230219.png)****Dom操作：![538d29da000152db05360278.png](image&#x2F;538d29da000152db05360278.png)****document.getElementsByName(&quot;&quot;);****有length属性,可同数组一样访问****document.getElementByTaName(&quot;&quot;);**返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序。1. Tagname是标签的名称，如p、a、img等标签名。**可同数组一样访问****三种的区别：****Id返回一个，Name，TaName返回一组****getAttribute()方法**获取属性值elementNode.getAttribute(&quot;name&quot;);name为属性名例如：getElementById(&quot;link&quot;).getAttribute(&quot;id&quot;);**setAttritebute(&quot;name&quot;,value);**设置元素结点的新属性并赋值属性：childNodes[]（子结点）**访问子结点的第一和最后一项**：node。firstchild    node.lastchild**访问父节点**：elementNode。parentNode；注意父节点只有一个**访问兄弟节点：**nodeObj.nextSibling  没有则返回null，。previousSibling 返回先前的一个节点（处于同一树级中）。可能返回节点间的空白文本结点，可通过循环判断nodeType是否为1function get_nextSibling(n)&#123;var x&#x3D;n.nextSibling;while(x.nodeType!&#x3D;1)x&#x3D;x.nextSibling;return x;&#125;**在已有结点后添加新的结点**：appendChild(newone);![5398fd020001ad4905890193.png](image&#x2F;5398fd020001ad4905890193.png)**在已有节点前插入新节点:**nodeobj.insertBefore(newnode,node.firstChild);**删除节点：nodeobj.**removeChild();**元素替换：**oldNode.replaceChild ()    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;      function replaceMessage()&#123;        var newnode&#x3D;document.createElement(&quot;i&quot;);        var newnodeText&#x3D;document.createTextNode(&quot;javaScript是一个很常用的技术&quot;);        newnode.appendChild(newnodeText);        var oldNode&#x3D;document.getElementById(&quot;oldnode&quot;);        oldNode.parentNode.replaceChild(newnode,oldNode);       &#125;  创建元素节点：document.createElement(字符串。指明创建元素的类型)**注意：**要与appendChild() 或 insertBefore()方法联合使用，将元素显示在页面中。**创建文本节点：** var x&#x3D;document.createElement(&quot;div&quot;);var node&#x3D;document.createTextNode(&quot;I love imooc&quot;）;x.appendChild(x);docuement.body.appendChild(x);**浏览器窗口可视区域大小：**一、获得浏览器窗口的尺寸的方法：window.innerHeight__浏览器窗口的内部高度window.innerWidth__浏览器窗口的内部高度二、对于IE8、7、6、5：document.documentElement.clientHeight表示HTML文档所在窗口的当前高度。document.documentElement.clientWidth表示HTML所在窗口的当前宽度document.body&#x2F;&#x2F;相当于body标签document.body.clientHeightdocument.body.clientWidth三、不同浏览器的兼容操作：var h&#x3D;document.documentElement.clientHeight||document.body.clientHeight;var w&#x3D;docuemnt.documentElement.clientHeight||document.body.clientWidth;document.write(w+&quot;*&quot;+h);网页尺寸scrollHeight  scrollWidth获取网页内容高度和宽度一、针对IE、Opera：scrollHeight是网页内容实际高度，可以小于clienHeight.二、针对NS、FF:scrollHeight是网页的内容高度，不过最小值是clientHeight。也就是说网页内容实际高度小于clientHeight时，scrollHeight返回clientHeight.三、浏览器兼容操作：var w&#x3D;document.documentElement.scrollWidth||document.body.scrollWidth;var h&#x3D;document.documentElement.scrollHeight||document.body.scrollHeight;网页尺寸（包括滚动条等边线，会随窗口的显示大小改变）offsetHeight一、值offsetHeight&#x3D;clientHeight+滚动条+边框二、浏览器兼容性var w&#x3D;document.documentElement.offsetWidth||document.body.offsetWidth;var h&#x3D;document.documentElement.offsetWidth||document.body.offsetWidth;网页卷曲的举例与偏移量![5347b2b10001e1a307520686.png](image&#x2F;5347b2b10001e1a307520686.png)**scrollLeft:**设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容。**scrollTop:**设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 ，即上边灰色的内容。**offsetLeft:**获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 。**offsetTop:**获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 。**注意:****1. 区分大小写****2. offsetParent：布局中设置postion属性(Relative、Absolute、fixed)的父容器，从最近的父节点开始，一层层向上找，直到HTML的body。**</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;JavaScript&quot;&gt;&lt;a href=&quot;#JavaScript&quot; class=&quot;headerlink&quot; title=&quot;JavaScript&quot;&gt;&lt;/a&gt;JavaScript&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;插入&lt;script&gt;javascript code&lt;/scr</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="js" scheme="http://wstcly.xyz/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL安装配置</title>
+    <link href="http://wstcly.xyz/2024/06/30/mysql/"/>
+    <id>http://wstcly.xyz/2024/06/30/mysql/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:56:30.126Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>下载地址： <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p><p>默认配置文件：my.ini 手动创建后放在根目录下</p><pre class="language-none"><code class="language-none">[mysql]# 设置mysql客户端默认字符集default-character-set&#x3D;utf8[mysqld]# 设置3306端口port &#x3D; 3306# 设置mysql的安装目录basedir&#x3D;D:&#x2F;tools&#x2F;web&#x2F;mysql-8.0.11-winx64# 设置mysql数据库的数据的存放目录datadir&#x3D;D:&#x2F;tools&#x2F;web&#x2F;mysql-8.0.11-winx64&#x2F;data# 允许最大连接数max_connections&#x3D;20# 服务端使用的字符集默认为8比特编码的latin1字符集character-set-server&#x3D;utf8# 创建新表时将使用的默认存储引擎default-storage-engine&#x3D;INNODB#修改密码加密方式default_authentication_plugin&#x3D;mysql_native_password#无密码登陆mysqld --console --skip-grant-tables --shared-memory</code></pre><p>添加环境变量：</p><p>cd bin: 初始化data文件夹： mysqld –initialize-insecure –user&#x3D;mysql;</p><p>安装：mysqld install</p><p>启动服务：start mysql</p><p>关闭服务：net stop mysql</p><p>修改密码以及加密规则：</p><p>打开cmd：mysql -uroot -p</p><p>开机自启动： </p><p>cp &#x2F;mysql&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld &amp;&amp; chkconfig mysqld on</p><p>启动服务： systemctl start mysqld</p><p>允许远程登陆：  use mysql; update user set host&#x3D;’%’ where user &#x3D;’root’;</p><p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root‘@’%’WITH GRANT OPTION;</p><p>flush privileges;</p><p>修改root密码： alter user ‘root‘@’%’ identified by  ‘123’;</p><p>flush privileges;</p><p>修改验证方式： update user set plugin&#x3D;’mysql_native_password’ where user&#x3D;’root’;</p><p>可视化软件SQLyog：<a href="https://pan.baidu.com/s/1TWeii3pIVUd4r-_PdggR3A">https://pan.baidu.com/s/1TWeii3pIVUd4r-_PdggR3A</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;MySQL&quot;&gt;&lt;a href=&quot;#MySQL&quot; class=&quot;headerlink&quot; title=&quot;MySQL&quot;&gt;&lt;/a&gt;MySQL&lt;/h1&gt;&lt;p&gt;下载地址： &lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot;&gt;htt</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Mysql" scheme="http://wstcly.xyz/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ的六种工作模式</title>
+    <link href="http://wstcly.xyz/2024/06/30/rabbitmq-de-liu-chong-gong-zuo-mo-shi-darjeely-bo-ke-yuan/"/>
+    <id>http://wstcly.xyz/2024/06/30/rabbitmq-de-liu-chong-gong-zuo-mo-shi-darjeely-bo-ke-yuan/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:57:16.844Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="RabbitMQ的六种工作模式"><a href="#RabbitMQ的六种工作模式" class="headerlink" title="RabbitMQ的六种工作模式"></a><a href="https://www.cnblogs.com/Jeely/p/10784013.html">RabbitMQ的六种工作模式</a></h1><h3 id="一-基于erlang语言：-是一种支持高并发的语言"><a href="#一-基于erlang语言：-是一种支持高并发的语言" class="headerlink" title="一.基于erlang语言： 是一种支持高并发的语言"></a><strong>一.基于erlang语言： 是一种支持高并发的语言</strong></h3><h5 id="RabbitMQ的六种工作模式："><a href="#RabbitMQ的六种工作模式：" class="headerlink" title="RabbitMQ的六种工作模式："></a><strong>RabbitMQ的六种工作模式：</strong></h5><h5 id="1-1-simple简单模式"><a href="#1-1-simple简单模式" class="headerlink" title="1.1 simple简单模式"></a><strong>1.1 simple简单模式</strong></h5><p><img src="/image/20181221114009759.png" alt="20181221114009759.png"></p><ol><li>消息产生着§将消息放入队列</li><li>消息的消费者(consumer) 监听(while) 消息队列,如果队列中有消息,就消费掉,消息被拿走后,自动从队列中删除(隐患 消息可能没有被消费者正确处理,已经从队列中消失了,造成消息的丢失)应用场景:聊天(中间有一个过度的服务器;p端,c端)</li></ol><h5 id="1-2-work工作模式-资源的竞争"><a href="#1-2-work工作模式-资源的竞争" class="headerlink" title="1.2 work工作模式(资源的竞争)"></a><strong>1.2 work工作模式(资源的竞争)</strong></h5><p><img src="/image/20181221114036231.png" alt="20181221114036231.png"></p><ol><li>消息产生者将消息放入队列消费者可以有多个,消费者1,消费者2,同时监听同一个队列,消息被消费?C1 C2共同争抢当前的消息队列内容,谁先拿到谁负责消费消息(隐患,高并发情况下,默认会产生某一个消息被多个消费者共同使用,可以设置一个开关(syncronize,与同步锁的性能不一样) 保证一条消息只能被一个消费者使用)</li><li>应用场景:红包;大项目中的资源调度(任务分配系统不需知道哪一个任务执行系统在空闲,直接将任务扔到消息队列中,空闲的系统自动争抢)</li></ol><h5 id="1-3-publish-subscribe发布订阅-共享资源"><a href="#1-3-publish-subscribe发布订阅-共享资源" class="headerlink" title="1.3 publish&#x2F;subscribe发布订阅(共享资源)"></a><strong>1.3 publish&#x2F;subscribe发布订阅(共享资源)</strong></h5><p><img src="/image/20181221114050657.png" alt="20181221114050657.png"></p><ol><li>X代表交换机rabbitMQ内部组件,erlang 消息产生者是代码完成,代码的执行效率不高,消息产生者将消息放入交换机,交换机发布订阅把消息发送到所有消息队列中,对应消息队列的消费者拿到消息进行消费</li><li>相关场景:邮件群发,群聊天,广播(广告)</li></ol><h5 id="1-4-routing路由模式"><a href="#1-4-routing路由模式" class="headerlink" title="1.4 routing路由模式"></a><strong>1.4 routing路由模式</strong></h5><p><img src="/image/20181221114420299.png" alt="20181221114420299.png"></p><ol><li>消息生产者将消息发送给交换机按照路由判断,路由是字符串(info) 当前产生的消息携带路由字符(对象的方法),交换机根据路由的key,只能匹配上路由key对应的消息队列,对应的消费者才能消费消息;</li><li>根据业务功能定义路由字符串</li><li>从系统的代码逻辑中获取对应的功能字符串,将消息任务扔到对应的队列中业务场景:error 通知;EXCEPTION;错误通知的功能;传统意义的错误通知;客户通知;利用key路由,可以将程序中的错误封装成消息传入到消息队列中,开发者可以自定义消费者,实时接收错误;</li></ol><h5 id="1-5-topic-主题模式-路由模式的一种"><a href="#1-5-topic-主题模式-路由模式的一种" class="headerlink" title="1.5 topic 主题模式(路由模式的一种)"></a><strong>1.5 topic 主题模式(路由模式的一种)</strong></h5><p><img src="/image/20181221114208408.png" alt="20181221114208408.png"></p><ol><li>星号井号代表通配符</li><li>星号代表多个单词,井号代表一个单词</li><li>路由功能添加模糊匹配</li><li>消息产生者产生消息,把消息交给交换机</li><li>交换机根据key的规则模糊匹配到对应的队列,由队列的监听消费者接收消息消费</li></ol><h5 id="1-6RPC-先不做解释"><a href="#1-6RPC-先不做解释" class="headerlink" title="1.6RPC 先不做解释"></a><strong>1.6RPC 先不做解释</strong></h5><p>参考文档：1.<a href="https://blog.csdn.net/chou_out_man/article/details/79244019">https://blog.csdn.net/chou_out_man&#x2F;article&#x2F;details&#x2F;79244019</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;RabbitMQ的六种工作模式&quot;&gt;&lt;a href=&quot;#RabbitMQ的六种工作模式&quot; class=&quot;headerlink&quot; title=&quot;RabbitMQ的六种工作模式&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.cnblogs.com/Jeely/p/</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="rabbitMQ" scheme="http://wstcly.xyz/tags/rabbitMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot跨域访问配置</title>
+    <link href="http://wstcly.xyz/2024/06/30/springboot-kua-yu-fang-wen-pei-zhi-jian-shu/"/>
+    <id>http://wstcly.xyz/2024/06/30/springboot-kua-yu-fang-wen-pei-zhi-jian-shu/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:58:20.353Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="SpringBoot跨域访问配置"><a href="#SpringBoot跨域访问配置" class="headerlink" title="SpringBoot跨域访问配置"></a>SpringBoot跨域访问配置</h1><p><a href="https://www.jianshu.com/u/129d137fa8d1">%!(EXTRA markdown.ResourceType&#x3D;, string&#x3D;, string&#x3D;)</a></p><p><a href="https://www.jianshu.com/u/129d137fa8d1">时光飞旭</a></p><p>_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’234’%3e%3cpath d&#x3D;’M751.144277 307.2l-123.016533-238.933333h159.778133a81.92 81.92 0 0 1 59.1872 25.258666l160.256 167.492267A27.306667 27.306667 0 0 1 987.620011 307.2h-236.475734z m270.506667 111.547733L640.927744 946.039467a27.306667 27.306667 0 0 1-48.128-24.234667L766.504277 375.466667h-56.388266l-170.5984 590.165333a27.306667 27.306667 0 0 1-52.462934 0.034133L315.500544 375.466667H259.112277l174.523734 545.5872a27.306667 27.306667 0 0 1-48.128 24.302933L5.160277 418.747733A27.306667 27.306667 0 0 1 27.346944 375.466667H999.464277a27.306667 27.306667 0 0 1 22.152534 43.281066zM18.301611 261.0176L178.557611 93.525333A81.92 81.92 0 0 1 237.744811 68.266667h159.744L274.506411 307.2H38.030677a27.306667 27.306667 0 0 1-19.729066-46.1824zM453.877077 68.266667h117.896534l122.9824 238.933333H330.894677l122.9824-238.933333z’ data-evernote-id&#x3D;’128’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)_0.2132018.12.19 23:15:29字数 831阅读 4,207</p><h3 id="什么是跨域访问（CORS）"><a href="#什么是跨域访问（CORS）" class="headerlink" title="什么是跨域访问（CORS）"></a>什么是跨域访问（CORS）</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</p><p>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</p><h3 id="跨域原理"><a href="#跨域原理" class="headerlink" title="跨域原理"></a>跨域原理</h3><ul><li>跨域只存在于浏览器端，不存在于安卓&#x2F;ios&#x2F;Node.js&#x2F;python&#x2F; java等其它环境；</li><li>跨域请求能发出去，服务端能收到请求并正常返回结果，只是结果被浏览器拦截了；</li><li>之所以会跨域，是因为受到了同源策略的限制，同源策略要求源相同才能正常进行通信，即协议、域名、端口号都完全一致。</li></ul><h3 id="跨域访问介绍"><a href="#跨域访问介绍" class="headerlink" title="跨域访问介绍"></a>跨域访问介绍</h3><p>举个例子：假设虚假网站中存在一个form表单，用户填写之后可以根据真实的路由向真实网站请求数据，真实网站接收到用户请求之后返回所需数据，这时候如果虚假网站可以直接接收的话，可以把请求结果保存下来，从而窃取用户的信息。</p><p><img src="https://wstcly.top/picgo/7632302-39030af48631cb40.png" alt="7632302-39030af48631cb40.png"></p><p>跨域访问限制.png</p><h4 id="官方形象化解释："><a href="#官方形象化解释：" class="headerlink" title="官方形象化解释："></a>官方形象化解释：</h4><p>ajax或者iframe指向的地址中，二级域名、端口、协议必须与主页面完全相同，否则就算跨域</p><p><img src="https://wstcly.top/picgo/7632302-04537925f4484b52.png" alt="7632302-04537925f4484b52.png"></p><p>跨域访问原理.png</p><h3 id="需求介绍"><a href="#需求介绍" class="headerlink" title="需求介绍"></a>需求介绍</h3><p>但是如果在一个项目中同时定义了多个服务，每个服务之间的端口号不一致，那么如何从一个服务调用另一个服务的接口呢？</p><p>该<a href="https://github.com/guangxush/SpringBoot_CORS">项目</a>中（里面的具体需求不在描述,，可自行git查看）下面有多个Module服务，cors用于处理用户的信息，web模块用于展示用户的信息（为了举例子，故意分开写），这时web(8080端口)需要用到cors（8081端口）下面请求用户数据的接口，但是由于端口号不一致，即使在同一个域名下也无法正常访问</p><p><img src="https://wstcly.top/picgo/7632302-3fc2e11463056c09.png" alt="7632302-3fc2e11463056c09.png"></p><p>项目框架.png</p><p><img src="https://wstcly.top/picgo/7632302-c1cf0a71b9d88951.png" alt="7632302-c1cf0a71b9d88951.png"></p><p>7632302-b196665beb89b6bf.png</p><p>直接输入id并点击查询，请求会被拦截：</p><p>浏览器提示index.html请求cors用户信息报错：</p><p><img src="https://wstcly.top/picgo/7632302-b1b8cb2830a1cd14.png" alt="7632302-b1b8cb2830a1cd14.png"></p><p>浏览器对请求拦截.png</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用Java配置cors<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/cors/src/main/java/com/shgx/cors/config/CorsConfig.java">CorsConfig.java</a>，使得整个应用都支持CORS（跨域访问解决方案很多，这里简单介绍一个）</p><pre class="language-none"><code class="language-none">@Configurationpublic class CorsConfig implements WebMvcConfigurer &#123;    &#x2F;**     * 页面跨域访问Controller过滤     *     * @return     *&#x2F;    @Override    public void addCorsMappings(CorsRegistry registry) &#123;        WebMvcConfigurer.super.addCorsMappings(registry);        registry.addMapping(&quot;&#x2F;**&quot;)                .allowedHeaders(&quot;*&quot;)                .allowedMethods(&quot;POST&quot;,&quot;GET&quot;)                .allowedOrigins(&quot;*&quot;);    &#125;&#125;123456789101112131415161718</code></pre><p>此时再次进行查询数据获取成功：</p><p><img src="https://wstcly.top/picgo/7632302-b196665beb89b6bf.png" alt="7632302-b196665beb89b6bf.png"></p><p>添加跨域访问配置并成功返回cors中信息.png</p><h3 id="部分接口跨域访问"><a href="#部分接口跨域访问" class="headerlink" title="部分接口跨域访问"></a>部分接口跨域访问</h3><p>但是如果cors中包含多个接口，只想暴露一部分出去应该怎么配置？</p><p>可以更改Mapping：</p><pre class="language-none"><code class="language-none">@Configurationpublic class CorsConfig implements WebMvcConfigurer &#123;    &#x2F;**     * 页面跨域访问Controller过滤     *     * @return     *&#x2F;    @Override    public void addCorsMappings(CorsRegistry registry) &#123;        WebMvcConfigurer.super.addCorsMappings(registry);        registry.addMapping(&quot;&#x2F;open&#x2F;**&quot;)                .allowedHeaders(&quot;*&quot;)                .allowedMethods(&quot;POST&quot;,&quot;GET&quot;)                .allowedOrigins(&quot;*&quot;);    &#125;&#125;123456789101112131415161718</code></pre><p>只开放部分接口</p><p>测试结果如下：</p><p>下图中从上到下按钮访问依次介绍：</p><ul><li>“查询”按钮访问外部cors下面的开放接口：<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/cors/src/main/java/com/shgx/cors/controller/UserController.java">UserController.java</a></li><li>“测试1”按钮访问web下面的本地接口：<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/web/src/main/java/com/shgx/web/controller/NativeController.java">NativeController.java</a></li><li>“测试2”按钮访问cors下面的封闭接口：<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/cors/src/main/java/com/shgx/cors/controller/AnotherController.java">AnotherController.java</a></li></ul><p>测试结果如下图所示：</p><ul><li>外部“查询”访问成功</li><li>本地“测试”访问成功</li><li>外部“测试”访问失败<br>  <img src="https://wstcly.top/picgo/7632302-5eb5dd4abc2cbe11.png" alt="7632302-5eb5dd4abc2cbe11.png"><br>  跨域访问开放部分接口.png</li></ul><h3 id="配置需要注意的地方"><a href="#配置需要注意的地方" class="headerlink" title="配置需要注意的地方"></a>配置需要注意的地方</h3><p>如果在<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/cors/src/main/resources/application.properties">application.properties</a>中已经配置了访问路由，如下图所示：</p><p><img src="https://wstcly.top/picgo/7632302-d06506529ee607e1.png" alt="7632302-d06506529ee607e1.png"></p><p>访问路由配置.png</p><p>请不要在跨域访问的配置文件<a href="https://github.com/guangxush/SpringBoot_CORS/blob/master/cors/src/main/java/com/shgx/cors/config/CorsConfig.java">CorsConfig.java</a>再次中添加该路由（如下图所示），否则会导致匹配失败的情况</p><pre class="language-none"><code class="language-none">@Configurationpublic class CorsConfig implements WebMvcConfigurer &#123;    &#x2F;**     * 页面跨域访问Controller过滤     *     * @return     *&#x2F;    @Override    public void addCorsMappings(CorsRegistry registry) &#123;        WebMvcConfigurer.super.addCorsMappings(registry);        registry.addMapping(&quot;&#x2F;operation&#x2F;open&#x2F;**&quot;)                .allowedHeaders(&quot;*&quot;)                .allowedMethods(&quot;POST&quot;,&quot;GET&quot;)                .allowedOrigins(&quot;*&quot;);    &#125;&#125;123456789101112131415161718</code></pre><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’575’%3e%3cpath d&#x3D;’M728.064 343.943529c-17.648941-2.891294-23.552-20.239059-26.503529-28.912941V104.026353C701.560471 46.200471 654.396235 0 595.425882 0c-53.007059 0-97.28 40.478118-106.134588 89.569882-29.997176 184.862118-138.541176 255.457882-217.630118 280.937412a26.142118 26.142118 0 0 0-18.130823 24.877177v560.067764c0 19.817412 16.022588 35.84 35.84 35.84h535.973647c56.018824-11.565176 94.328471-31.804235 120.892235-86.738823l120.832-416.105412c23.552-75.173647-14.757647-147.395765-100.231529-144.564706h-238.772706z m-571.813647 31.744H76.619294C35.358118 375.687529 0 410.383059 0 450.861176v462.426353c0 43.369412 32.406588 78.004706 76.619294 78.004706h79.631059c27.708235 0 50.115765-22.407529 50.115765-50.115764V425.863529a50.115765 50.115765 0 0 0-50.115765-50.115764z’ data-evernote-id&#x3D;’155’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em><br>2人点赞_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ viewBox&#x3D;’64 64 896 896’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-icon&#x3D;’right’ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ data-evernote-id&#x3D;’579’%3e%3cpath d&#x3D;’M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z’ data-evernote-id&#x3D;’580’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)_</p><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’584’%3e%3cpath d&#x3D;’M771.413333 668.728889c-18.773333 3.015111-25.031111 20.878222-28.16 29.866667v217.884444c0 59.733333-49.948444 107.52-112.412444 107.52a115.427556 115.427556 0 0 1-112.412445-92.558222c-31.857778-190.919111-146.830222-263.850667-230.627555-290.133334a27.420444 27.420444 0 0 1-19.228445-26.168888V37.944889C268.572444 17.066667 285.582222 0 306.631111 0h567.864889c59.335111 11.946667 99.953778 32.824889 128 89.543111l128.113778 429.909333c24.974222 77.653333-15.644444 152.291556-106.211556 149.276445H771.413333z m-605.866666-32.824889H81.180444C37.546667 635.904 0 600.064 0 558.250667V80.611556C0 35.84 34.360889 0 81.180444 0H165.546667c29.297778 0 53.077333 23.779556 53.077333 53.077333v529.749334a53.077333 53.077333 0 0 1-53.077333 53.077333z’ data-evernote-id&#x3D;’134’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p><a href="https://www.jianshu.com/nb/28780344">_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’http://www.w3.org/2000/svg' width='1em' height='1em' fill='currentColor' aria-hidden='true' focusable='false' class='js-evernote-checked' data-evernote-id='589'%3e%3cpath d='M178.390055 120.591045C111.268624 120.591045 56.888889 174.401955 56.888889 240.556383V903.97778C56.888889 970.302855 111.097977 1024 178.390055 1024h545.731364c67.121431 0 121.558049-53.81091 121.558049-120.02222V240.613265c0-66.268192-54.209088-120.02222-121.558049-120.02222H178.390055z m455.117432 301.136319H269.06087a30.147761 30.147761 0 0 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z m303.18409 301.136318a30.318409 30.318409 0 0 1-30.375291-30.318409V180.317742c0-66.268192-53.81091-120.02222-121.330519-120.022219H329.697688a30.147761 30.147761 0 0 1 0-60.23864l454.946784 0.056882C885.326618 0.113765 967.009987 80.887013 967.009987 180.602155v511.943118a30.318409 30.318409 0 0 1-30.31841 30.318409z m-303.18409-120.47728H269.06087a30.147761 30.147761 0 1 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z' data-evernote-id='145' class='js-evernote-checked'%3e%3c/path%3e%3c/svg%3e)_SpringBoot</a><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’595’%3e%3cpath d&#x3D;’M232.727273 579.87878833C271.28679 579.87878833 302.545455 548.62012233 302.545455 510.06060633 302.545455 471.50108933 271.28679 440.24242433 232.727273 440.24242433 194.167756 440.24242433 162.909091 471.50108933 162.909091 510.06060633 162.909091 548.62012233 194.167756 579.87878833 232.727273 579.87878833ZM512 579.87878833C550.559516 579.87878833 581.818182 548.62012233 581.818182 510.06060633 581.818182 471.50108933 550.559516 440.24242433 512 440.24242433 473.440484 440.24242433 442.181818 471.50108933 442.181818 510.06060633 442.181818 548.62012233 473.440484 579.87878833 512 579.87878833ZM791.272727 579.87878833C829.832243 579.87878833 861.090909 548.62012233 861.090909 510.06060633 861.090909 471.50108933 829.832243 440.24242433 791.272727 440.24242433 752.713211 440.24242433 721.454545 471.50108933 721.454545 510.06060633 721.454545 548.62012233 752.713211 579.87878833 791.272727 579.87878833Z’ data-evernote-id&#x3D;’101’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p>“小礼物走一走，来简书关注我”<br>还没有人赞赏，支持一下</p><p><a href="https://www.jianshu.com/u/129d137fa8d1">%!(EXTRA markdown.ResourceType&#x3D;, string&#x3D;, string&#x3D;)</a></p><p><a href="https://www.jianshu.com/u/129d137fa8d1" title="时光飞旭">时光飞旭</a></p><p>总资产10 (约0.86元)共写了2.2W字获得87个赞共37个粉丝</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;SpringBoot跨域访问配置&quot;&gt;&lt;a href=&quot;#SpringBoot跨域访问配置&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot跨域访问配置&quot;&gt;&lt;/a&gt;SpringBoot跨域访问配置&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="java" scheme="http://wstcly.xyz/tags/java/"/>
+    
+    <category term="spring" scheme="http://wstcly.xyz/tags/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring MVC Controller</title>
+    <link href="http://wstcly.xyz/2024/06/30/spring-mvc/"/>
+    <id>http://wstcly.xyz/2024/06/30/spring-mvc/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:57:58.533Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><p>Controller的三种方式</p><p><img src="/image/.png" alt=".png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Spring-MVC&quot;&gt;&lt;a href=&quot;#Spring-MVC&quot; class=&quot;headerlink&quot; title=&quot;Spring MVC&quot;&gt;&lt;/a&gt;Spring MVC&lt;/h1&gt;&lt;p&gt;Controller的三种方式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/imag</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="java" scheme="http://wstcly.xyz/tags/java/"/>
+    
+    <category term="spring mvc" scheme="http://wstcly.xyz/tags/spring-mvc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue开发规范</title>
+    <link href="http://wstcly.xyz/2024/06/30/vue-kai-fa-gui-fan/"/>
+    <id>http://wstcly.xyz/2024/06/30/vue-kai-fa-gui-fan/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:58:39.723Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vue开发规范"><a href="#vue开发规范" class="headerlink" title="vue开发规范"></a>vue开发规范</h1><p>Vue 开发规范目录及说明</p><ul><li>规范目的</li><li>命名规范</li><li>结构化规范注</li><li>释规范</li><li>编码规范</li><li>CSS 规范</li></ul><h5 id="规范目的"><a href="#规范目的" class="headerlink" title="规范目的"></a>规范目的</h5><blockquote><p>为提高团队协作效率</p><p>便于后台人员添加功能及前端后期优化维护</p><p>输出高质量的文档</p></blockquote><h5 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h5><blockquote><p>为了让大家书写可维护的代码，而不是一次性的代码</p><p>让团队当中其他人看你的代码能一目了然</p><p>甚至一段时间时候后你再看你某个时候写的代码也能看</p></blockquote><h6 id="普通变量命名规范"><a href="#普通变量命名规范" class="headerlink" title="普通变量命名规范"></a>普通变量命名规范</h6><ul><li>命名方法 ：驼峰命名法</li><li>命名规范 ：</li></ul><blockquote><ol><li>命名必须是跟需求的内容相关的词，如</li></ol></blockquote><p>let productPageDetail &#x3D; “产品详情页面”;</p><blockquote><ol><li>命名是复数的时候需要加s,如</li></ol></blockquote><p>const productList &#x3D; new Array();</p><h6 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h6><ul><li>命名方法 : 全部大写</li><li>命名规范 : 使用大写字母匈牙利式命名法。</li></ul><p>const MAX_COUNT &#x3D; 10</p><p>const URL &#x3D; ‘<a href="https://www.cupshe.com/">https://www.cupshe.com/</a>‘</p><h6 id="组件命名规范（驼峰式命名）"><a href="#组件命名规范（驼峰式命名）" class="headerlink" title="组件命名规范（驼峰式命名）"></a>组件命名规范（驼峰式命名）</h6><ul><li>公用组件以zsxj_kj(公司+项目名)开头如：</li></ul><p>zsxjKJ-TopBar,</p><p>zsxjCRM-TopBar</p><ul><li>页面内部组件以组件模块名简写为开头，Item 为结尾，如：</li></ul><p>addToCartItem,</p><p>checkoutItem</p><h6 id="method-方法命名命名规范"><a href="#method-方法命名命名规范" class="headerlink" title="method 方法命名命名规范"></a>method 方法命名命名规范</h6><ul><li>匈牙利式命名，统一使用动词或者动词+名词形式</li></ul><p>get_user_list,</p><p>submit_cart_product</p><ul><li>请求数据方法，以 data 结尾</li></ul><p>get_product_list_data</p><p>get_user_data</p><h6 id="views下的文件命名"><a href="#views下的文件命名" class="headerlink" title="views下的文件命名"></a>views下的文件命名</h6><ul><li>尽量是名词,且使用驼峰命名法</li></ul><p>productDetailPage</p><h6 id="props-命名"><a href="#props-命名" class="headerlink" title="props 命名"></a>props 命名</h6><ul><li>在声明 prop 的时候，使用驼峰命名法，在模板中使用 kebab-case</li></ul><p><code>&lt;script&gt;</code></p><p><code>props: &#123;</code></p><p><code>    greetingText: String</code></p><p><code>&#125;</code></p><p><code>&lt;/script&gt;</code></p><p><code>&lt;welcome-message greeting-text=&quot;hi&quot;&gt;&lt;/welcome-message&gt;</code></p><h5 id="结构化规范"><a href="#结构化规范" class="headerlink" title="结构化规范"></a>结构化规范</h5><h6 id="目录文件夹及子文件规范"><a href="#目录文件夹及子文件规范" class="headerlink" title="目录文件夹及子文件规范"></a>目录文件夹及子文件规范</h6><blockquote><p>以下统一管理处均对应相应模块</p><p>以下全局文件文件均以 index.js 导出，并在 main.js 中导入</p><p>以下临时文件，在使用后，接口已经有了，发版后清除</p></blockquote><p>src                                 源码目录</p><p>|– api                                 接口，统一管理</p><p>|– assets                              静态资源，统一管理</p><p>|– components                          公用组件，全局文件</p><p>|– filters                             过滤器，全局工具</p><p>|– icons                              图标，全局资源</p><p>|– datas                              模拟数据，临时存放</p><p>|– lib                                 外部引用的插件存放及修改文件</p><p>|– mock                                模拟接口，临时存放</p><p>|– router                              路由，统一管理</p><p>|– store                               vuex, 统一管理</p><p>|– views                             视图目录</p><p>| |– staffWorkbench                     视图模块名</p><p>| |– |– staffWorkbench.vue              模块入口页面</p><p>| |– |– indexComponents                 模块页面级组件文件夹</p><p>| |– |– components                      模块通用组件文件夹</p><h6 id="vue-文件基本结构"><a href="#vue-文件基本结构" class="headerlink" title="vue 文件基本结构"></a>vue 文件基本结构</h6><p><code>&lt;template&gt;</code></p><p>    <div></p><p>    </div></p></template><script>    export default {        components : {`        },`        data () {`            return {``            }``        },``        mounted() {``        }，``        methods: {``        }``}``</script>`<!--声明语言，并且添加scoped--><style lang="scss" scoped>`</style>`<h6 id="组件选项顺序"><a href="#组件选项顺序" class="headerlink" title="组件选项顺序"></a>组件选项顺序</h6><ul><li><p>components</p></li><li><p>props</p></li><li><p>data</p></li><li><p>computed</p></li><li><p>created</p></li><li><p>mounted</p></li><li><p>metods</p></li><li><p>filter</p></li><li><p>watch</p></li></ul><h5 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h5><h6 id="务必添加注释列表"><a href="#务必添加注释列表" class="headerlink" title="务必添加注释列表"></a>务必添加注释列表</h6><blockquote><ol><li>公共组件使用说明</li><li>各组件中重要函数或者类说明</li><li>复杂的业务逻辑处理说明</li><li>特殊情况的代码处理说明,对于代码中特殊用途的变量、存在临界值、函数中使用的 hack、使用</li><li>了某种算法或思路等需要进行注释描述</li><li>多重 if 判断语句</li><li>注释块必须以&#x2F;（至少两个星号）开头&#x2F;</li><li>单行注释使用&#x2F;&#x2F;</li></ol></blockquote><h5 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h5><h6 id="指令规范"><a href="#指令规范" class="headerlink" title="指令规范"></a>指令规范</h6><p><code>:class=&quot;&#123;&#39;show-left&#39;：true&#125;&quot;</code></p><p>@click&#x3D;”getListData”</p><h6 id="v-for-循环必须加上-key-属性，在整个-for-循环中-key-需要唯一"><a href="#v-for-循环必须加上-key-属性，在整个-for-循环中-key-需要唯一" class="headerlink" title="v-for 循环必须加上 key 属性，在整个 for 循环中 key 需要唯一"></a>v-for 循环必须加上 key 属性，在整个 for 循环中 key 需要唯一</h6><p><code>&lt;ul&gt;</code></p><p>    <li v-for="todo in todos" :key="todo.id"></p><p>        </p><p>    </li></p><p><code>&lt;/ul&gt;</code></p><h6 id="避免-v-if-和-v-for-同时用在一个元素上（性能问题）"><a href="#避免-v-if-和-v-for-同时用在一个元素上（性能问题）" class="headerlink" title="避免 v-if 和 v-for 同时用在一个元素上（性能问题）"></a>避免 v-if 和 v-for 同时用在一个元素上（性能问题）</h6><ul><li>将数据替换为一个计算属性，让其返回过滤后的列表</li></ul><p><code>&lt;ul&gt;</code></p><p>    <li v-for="user in activeUsers" :key="user.id"></p><p>        </p><p>     </li></p></ul><script>`computed: {`    activeUsers: function () {        return this.users.filter(function (user) {`            return user.isActive``        })``    }``}``</script>`<ul><li>将 v-if 移动至容器元素上 (比如 ul, ol)</li></ul><p><code>&lt;ul v-if=&quot;shouldShowUsers&quot;&gt;</code></p><p>    <li v-for="user in users" :key="user.id"></p><p>        </p><p>    </li></p><p><code>&lt;/ul&gt;</code></p><p>props: {</p><p>    status: {</p><p>        type: String,</p><p>        required: true,</p><p>        validator: function (value) {</p><p>            return [</p><p>               ‘syncing’,</p><p>                ‘synced’,</p><p>                ‘version-conflict’,</p><p>                ‘error’</p><p>            ].indexOf(value) !&#x3D;&#x3D; -1</p><p>        }</p><p>    }</p><p><code>&#125;</code></p><h6 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h6><blockquote><p>避免 this.$parent调试信息</p><p>console.log() debugger 使用完及时删除</p></blockquote><p>除了三目运算，if,else 等禁止简写</p><h6 id="CSS-规范"><a href="#CSS-规范" class="headerlink" title="CSS 规范"></a>CSS 规范</h6><blockquote><p>统一使用”-“连字符</p><p>省略值为 0 时的单位</p><p>如果 CSS 可以做到，就不要使用 JS</p><p>建议并适当缩写值，提高可读性，特殊情况除外</p></blockquote><p>padding-bottom: 0;</p><p>margin: 0;</p><ul><li>分类的命名方法</li></ul><blockquote><p>使用单个字母加上”-“为前缀</p><p>布局（grid）（.g-）</p><p>模块（module）（.m-）</p><p>元件（unit）（.u-）</p><p>功能（function）（.f-）</p><p>皮肤（skin）（.s-）</p><p>状态（.z-）</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;vue开发规范&quot;&gt;&lt;a href=&quot;#vue开发规范&quot; class=&quot;headerlink&quot; title=&quot;vue开发规范&quot;&gt;&lt;/a&gt;vue开发规范&lt;/h1&gt;&lt;p&gt;Vue 开发规范目录及说明&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;规范目的&lt;/li&gt;
+&lt;li&gt;命名规范&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="vue" scheme="http://wstcly.xyz/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不知道是所有人都这样</title>
+    <link href="http://wstcly.xyz/2024/06/30/bu-zhi-dao-shi-suo-you-ren-du-zhe-yang-huan-shi-wei-du-wo-zi-ji-yue-shi-zai-te-shu-shi-qi-yue-xi-wang-bie-ren-neng-xiang-zheng-chang-shi-hou-na-yang-dui-dai/"/>
+    <id>http://wstcly.xyz/2024/06/30/bu-zhi-dao-shi-suo-you-ren-du-zhe-yang-huan-shi-wei-du-wo-zi-ji-yue-shi-zai-te-shu-shi-qi-yue-xi-wang-bie-ren-neng-xiang-zheng-chang-shi-hou-na-yang-dui-dai/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:44:47.460Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知道是所有人都这样，还是唯独我自己。越是在特殊时期，越希望别人能像正常时候那样对待。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知道是所有人都这样，还是唯独我自己。越是在特殊时期，越希望别人能像正常时候那样对待。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心情" scheme="http://wstcly.xyz/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人的镜子</title>
+    <link href="http://wstcly.xyz/2024/06/30/ren-de-jing-zi/"/>
+    <id>http://wstcly.xyz/2024/06/30/ren-de-jing-zi/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:55:17.611Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="人的镜子"><a href="#人的镜子" class="headerlink" title="人的镜子"></a>人的镜子</h1><p>人，总是通过照镜子来观察自身，再去装饰自己，去变成别人喜欢的样子。</p><p>信心和自卑的来源，都是那面镜子。镜子给出积极的反馈，你就变得自信；镜子给出消极的回应，自卑紧随而来。若是无法从中摆脱出来，苦恼就会来的很自然，喜悲不定，欢忧轮转。</p><p>守住初心，方得始终。固守本心，不为流言蜚语所动，不为冷言热语所讽，知易行难。于风口浪尖狂舞，极尽生命之所能。能顶住千夫所指，能放下众人所望，真真切切，踽踽独行。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;人的镜子&quot;&gt;&lt;a href=&quot;#人的镜子&quot; class=&quot;headerlink&quot; title=&quot;人的镜子&quot;&gt;&lt;/a&gt;人的镜子&lt;/h1&gt;&lt;p&gt;人，总是通过照镜子来观察自身，再去装饰自己，去变成别人喜欢的样子。&lt;/p&gt;
+&lt;p&gt;信心和自卑的来源，都是那面镜子。镜子给出积</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="思考" scheme="http://wstcly.xyz/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>会不会还是像她</title>
+    <link href="http://wstcly.xyz/2024/06/30/hui-bu-hui-huan-shi-xiang-ta/"/>
+    <id>http://wstcly.xyz/2024/06/30/hui-bu-hui-huan-shi-xiang-ta/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:46:20.491Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="会不会还是像她"><a href="#会不会还是像她" class="headerlink" title="会不会还是像她"></a>会不会还是像她</h1><p>    和她的对话好像和她是一样的，难道结局也是类似？我不敢确定这是不是真的，就和我不敢真正的向她倾诉一样。她是否会察觉我的每个动作都有爱的痕迹，每一次帮助都是在她还未身处险地之前。</p><p>总会有那么一点担心，总会有那么一点迷茫。害怕结局和之前一样。怪我没有分清，怪我没有看清，这只是简单的同学情谊。害的你被我惊扰，平添一缕烦恼。把错都算在我头上吧，反正你也没有付出过什么，把忧愁都丢给我吧，反正你也没期待过什么。</p><p>    让我觉得自己像是一个傻子的，不是我不顾一切的呆头呆脑的去迎合，而是疑虑将我困在原地，你却早已远去。我总是觉得你这么对我，也许是超过了本分，缘起所致，可在你看来，这不过是出于礼貌，这真的是我们的差别，是造成这一切困扰的根源。不知道当你知道于你而言只是无垠的海远到看不见边的一起翻涌，却在我的内心深处最平静的小湖边掀起最长久的波澜的时候，会做何感想，可能更多的是处于礼貌的无奈罢。</p><p>    如今的我只想奉上衷心的祝福，希望你所托付的那个人不会让你在看不见的角落里落泪，不会让你一个人在黑夜里徘徊。眼角向下，愁眉深锁，也许是在懊悔，也许是在为自己当初的选择感到可悲。希望那不是你。永远不会出现在你的世界里。</p><p>    能抓在手里的幸福，谁会忍心让它过户。所说的放手，大抵是见不到了希望，满剩荒凉。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;会不会还是像她&quot;&gt;&lt;a href=&quot;#会不会还是像她&quot; class=&quot;headerlink&quot; title=&quot;会不会还是像她&quot;&gt;&lt;/a&gt;会不会还是像她&lt;/h1&gt;&lt;p&gt;    和她的对话好像和她是一样的，难道结局也是类似？我不敢确定这是不是真的，就和我不敢真正的向她倾</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心情" scheme="http://wstcly.xyz/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用JWT实现Token认证</title>
+    <link href="http://wstcly.xyz/2024/06/30/shi-yong-jwt-shi-xian-token-ren-zheng-jian-shu/"/>
+    <id>http://wstcly.xyz/2024/06/30/shi-yong-jwt-shi-xian-token-ren-zheng-jian-shu/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:57:30.672Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用JWT实现Token认证"><a href="#使用JWT实现Token认证" class="headerlink" title="使用JWT实现Token认证"></a>使用JWT实现Token认证</h1><h1 id="使用JWT实现Token认证-1"><a href="#使用JWT实现Token认证-1" class="headerlink" title="使用JWT实现Token认证"></a>使用JWT实现Token认证</h1><p><a href="https://www.jianshu.com/u/4757052c2a58">%!(EXTRA markdown.ResourceType&#x3D;, string&#x3D;, string&#x3D;)</a></p><p><a href="https://www.jianshu.com/u/4757052c2a58">aishenla</a></p><p>_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’234’%3e%3cpath d&#x3D;’M751.144277 307.2l-123.016533-238.933333h159.778133a81.92 81.92 0 0 1 59.1872 25.258666l160.256 167.492267A27.306667 27.306667 0 0 1 987.620011 307.2h-236.475734z m270.506667 111.547733L640.927744 946.039467a27.306667 27.306667 0 0 1-48.128-24.234667L766.504277 375.466667h-56.388266l-170.5984 590.165333a27.306667 27.306667 0 0 1-52.462934 0.034133L315.500544 375.466667H259.112277l174.523734 545.5872a27.306667 27.306667 0 0 1-48.128 24.302933L5.160277 418.747733A27.306667 27.306667 0 0 1 27.346944 375.466667H999.464277a27.306667 27.306667 0 0 1 22.152534 43.281066zM18.301611 261.0176L178.557611 93.525333A81.92 81.92 0 0 1 237.744811 68.266667h159.744L274.506411 307.2H38.030677a27.306667 27.306667 0 0 1-19.729066-46.1824zM453.877077 68.266667h117.896534l122.9824 238.933333H330.894677l122.9824-238.933333z’ data-evernote-id&#x3D;’128’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)_42018.08.15 15:42:39字数 187阅读 119,211</p><p>为什么使用JWT？</p><p>随着技术的发展，分布式web应用的普及，通过session管理用户登录状态成本越来越高，因此慢慢发展成为token的方式做登录身份校验，然后通过token去取redis中的缓存的用户信息，随着之后jwt的出现，校验方式更加简单便捷化，无需通过redis缓存，而是直接根据token取出保存的用户信息，以及对token可用性校验，单点登录更为简单。</p><p>JWT架构图</p><p><img src="https://wstcly.top/picgo/3383598-c82676bb8445bae9.png" alt="3383598-c82676bb8445bae9.png"></p><p>JWT架构图.png</p><p>使用JWT核心代码：</p><p>maven依赖：</p><pre class="language-none"><code class="language-none">        &lt;dependency&gt;            &lt;groupId&gt;com.auth0&lt;&#x2F;groupId&gt;            &lt;artifactId&gt;java-jwt&lt;&#x2F;artifactId&gt;            &lt;version&gt;3.2.0&lt;&#x2F;version&gt;        &lt;&#x2F;dependency&gt;        &lt;dependency&gt;            &lt;groupId&gt;io.jsonwebtoken&lt;&#x2F;groupId&gt;            &lt;artifactId&gt;jjwt&lt;&#x2F;artifactId&gt;            &lt;version&gt;0.7.0&lt;&#x2F;version&gt;        &lt;&#x2F;dependency&gt;12345678910</code></pre><p>JWT工具类：</p><p>用于生成Token，和Token验证</p><pre class="language-none"><code class="language-none">public class JwtUtils &#123;    &#x2F;**     * 签发JWT     * @param id     * @param subject 可以是JSON数据 尽可能少     * @param ttlMillis     * @return  String     *     *&#x2F;    public static String createJWT(String id, String subject, long ttlMillis) &#123;        SignatureAlgorithm signatureAlgorithm &#x3D; SignatureAlgorithm.HS256;        long nowMillis &#x3D; System.currentTimeMillis();        Date now &#x3D; new Date(nowMillis);        SecretKey secretKey &#x3D; generalKey();        JwtBuilder builder &#x3D; Jwts.builder()                .setId(id)                .setSubject(subject)   &#x2F;&#x2F; 主题                .setIssuer(&quot;user&quot;)     &#x2F;&#x2F; 签发者                .setIssuedAt(now)      &#x2F;&#x2F; 签发时间                .signWith(signatureAlgorithm, secretKey); &#x2F;&#x2F; 签名算法以及密匙        if (ttlMillis &gt;&#x3D; 0) &#123;            long expMillis &#x3D; nowMillis + ttlMillis;            Date expDate &#x3D; new Date(expMillis);            builder.setExpiration(expDate); &#x2F;&#x2F; 过期时间        &#125;        return builder.compact();    &#125;    &#x2F;**     * 验证JWT     * @param jwtStr     * @return     *&#x2F;    public static CheckResult validateJWT(String jwtStr) &#123;        CheckResult checkResult &#x3D; new CheckResult();        Claims claims &#x3D; null;        try &#123;            claims &#x3D; parseJWT(jwtStr);            checkResult.setSuccess(true);            checkResult.setClaims(claims);        &#125; catch (ExpiredJwtException e) &#123;            checkResult.setErrCode(SystemConstant.JWT_ERRCODE_EXPIRE);            checkResult.setSuccess(false);        &#125; catch (SignatureException e) &#123;            checkResult.setErrCode(SystemConstant.JWT_ERRCODE_FAIL);            checkResult.setSuccess(false);        &#125; catch (Exception e) &#123;            checkResult.setErrCode(SystemConstant.JWT_ERRCODE_FAIL);            checkResult.setSuccess(false);        &#125;        return checkResult;    &#125;    public static SecretKey generalKey() &#123;        byte[] encodedKey &#x3D; Base64.decode(SystemConstant.JWT_SECERT);        SecretKey key &#x3D; new SecretKeySpec(encodedKey, 0, encodedKey.length, &quot;AES&quot;);        return key;    &#125;        &#x2F;**     *      * 解析JWT字符串     * @param jwt     * @return     * @throws Exception     *&#x2F;    public static Claims parseJWT(String jwt) throws Exception &#123;        SecretKey secretKey &#x3D; generalKey();        return Jwts.parser()            .setSigningKey(secretKey)            .parseClaimsJws(jwt)            .getBody();    &#125;&#125;123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172</code></pre><p>如何使用？</p><p>代码实例：</p><pre class="language-none"><code class="language-none">public class LoginController &#123;    @Autowired    UserRepository userRepository;        @ApiOperation(value&#x3D;&quot;用户登陆&quot;)    @RequestMapping(value&#x3D;&quot;login&quot;,method &#x3D; RequestMethod.POST)    public ReturnVo login(String username, String password,HttpServletResponse            response) &#123;        User user &#x3D;  userRepository.findByUsername(username);        if(user!&#x3D;null)&#123;            if(user.getPassword().equals(password))&#123;                &#x2F;&#x2F;把token返回给客户端--&gt;客户端保存至cookie--&gt;客户端每次请求附带cookie参数                String JWT &#x3D; JwtUtils.createJWT(&quot;1&quot;, username, SystemConstant.JWT_TTL);                return ReturnVo.ok(JWT);            &#125;else&#123;                return ReturnVo.error();            &#125;        &#125;else&#123;            return ReturnVo.error();        &#125;    &#125;    @ApiOperation(value&#x3D;&quot;获取用户信息&quot;)    @RequestMapping(value&#x3D;&quot;description&quot;,method &#x3D; RequestMethod.POST)    public ReturnVo description(String username) &#123;        User user &#x3D;  userRepository.findByUsername(username);        return ReturnVo.ok(user.getDescription());    &#125;&#125;12345678910111213141516171819202122232425262728</code></pre><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’864’%3e%3cpath d&#x3D;’M728.064 343.943529c-17.648941-2.891294-23.552-20.239059-26.503529-28.912941V104.026353C701.560471 46.200471 654.396235 0 595.425882 0c-53.007059 0-97.28 40.478118-106.134588 89.569882-29.997176 184.862118-138.541176 255.457882-217.630118 280.937412a26.142118 26.142118 0 0 0-18.130823 24.877177v560.067764c0 19.817412 16.022588 35.84 35.84 35.84h535.973647c56.018824-11.565176 94.328471-31.804235 120.892235-86.738823l120.832-416.105412c23.552-75.173647-14.757647-147.395765-100.231529-144.564706h-238.772706z m-571.813647 31.744H76.619294C35.358118 375.687529 0 410.383059 0 450.861176v462.426353c0 43.369412 32.406588 78.004706 76.619294 78.004706h79.631059c27.708235 0 50.115765-22.407529 50.115765-50.115764V425.863529a50.115765 50.115765 0 0 0-50.115765-50.115764z’ data-evernote-id&#x3D;’155’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em><br>63人点赞_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ viewBox&#x3D;’64 64 896 896’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-icon&#x3D;’right’ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ data-evernote-id&#x3D;’868’%3e%3cpath d&#x3D;’M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z’ data-evernote-id&#x3D;’869’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)_</p><p><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’873’%3e%3cpath d&#x3D;’M771.413333 668.728889c-18.773333 3.015111-25.031111 20.878222-28.16 29.866667v217.884444c0 59.733333-49.948444 107.52-112.412444 107.52a115.427556 115.427556 0 0 1-112.412445-92.558222c-31.857778-190.919111-146.830222-263.850667-230.627555-290.133334a27.420444 27.420444 0 0 1-19.228445-26.168888V37.944889C268.572444 17.066667 285.582222 0 306.631111 0h567.864889c59.335111 11.946667 99.953778 32.824889 128 89.543111l128.113778 429.909333c24.974222 77.653333-15.644444 152.291556-106.211556 149.276445H771.413333z m-605.866666-32.824889H81.180444C37.546667 635.904 0 600.064 0 558.250667V80.611556C0 35.84 34.360889 0 81.180444 0H165.546667c29.297778 0 53.077333 23.779556 53.077333 53.077333v529.749334a53.077333 53.077333 0 0 1-53.077333 53.077333z’ data-evernote-id&#x3D;’134’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p><a href="https://www.jianshu.com/nb/7010086">_![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’http://www.w3.org/2000/svg' width='1em' height='1em' fill='currentColor' aria-hidden='true' focusable='false' class='js-evernote-checked' data-evernote-id='878'%3e%3cpath d='M178.390055 120.591045C111.268624 120.591045 56.888889 174.401955 56.888889 240.556383V903.97778C56.888889 970.302855 111.097977 1024 178.390055 1024h545.731364c67.121431 0 121.558049-53.81091 121.558049-120.02222V240.613265c0-66.268192-54.209088-120.02222-121.558049-120.02222H178.390055z m455.117432 301.136319H269.06087a30.147761 30.147761 0 0 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z m303.18409 301.136318a30.318409 30.318409 0 0 1-30.375291-30.318409V180.317742c0-66.268192-53.81091-120.02222-121.330519-120.022219H329.697688a30.147761 30.147761 0 0 1 0-60.23864l454.946784 0.056882C885.326618 0.113765 967.009987 80.887013 967.009987 180.602155v511.943118a30.318409 30.318409 0 0 1-30.31841 30.318409z m-303.18409-120.47728H269.06087a30.147761 30.147761 0 1 1 0-60.238641h364.503499a30.147761 30.147761 0 0 1 0 60.238641z' data-evernote-id='145' class='js-evernote-checked'%3e%3c/path%3e%3c/svg%3e)_javaEE</a><em>![](data:image&#x2F;svg+xml,%3csvg xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ width&#x3D;’1em’ height&#x3D;’1em’ fill&#x3D;’currentColor’ aria-hidden&#x3D;’true’ focusable&#x3D;’false’ class&#x3D;’js-evernote-checked’ data-evernote-id&#x3D;’884’%3e%3cpath d&#x3D;’M232.727273 579.87878833C271.28679 579.87878833 302.545455 548.62012233 302.545455 510.06060633 302.545455 471.50108933 271.28679 440.24242433 232.727273 440.24242433 194.167756 440.24242433 162.909091 471.50108933 162.909091 510.06060633 162.909091 548.62012233 194.167756 579.87878833 232.727273 579.87878833ZM512 579.87878833C550.559516 579.87878833 581.818182 548.62012233 581.818182 510.06060633 581.818182 471.50108933 550.559516 440.24242433 512 440.24242433 473.440484 440.24242433 442.181818 471.50108933 442.181818 510.06060633 442.181818 548.62012233 473.440484 579.87878833 512 579.87878833ZM791.272727 579.87878833C829.832243 579.87878833 861.090909 548.62012233 861.090909 510.06060633 861.090909 471.50108933 829.832243 440.24242433 791.272727 440.24242433 752.713211 440.24242433 721.454545 471.50108933 721.454545 510.06060633 721.454545 548.62012233 752.713211 579.87878833 791.272727 579.87878833Z’ data-evernote-id&#x3D;’101’ class&#x3D;’js-evernote-checked’%3e%3c&#x2F;path%3e%3c&#x2F;svg%3e)</em></p><p>“小礼物走一走，来简书关注我”<br>还没有人赞赏，支持一下</p><p><a href="https://www.jianshu.com/u/4757052c2a58"><img src="https://wstcly.top/picgo/webp.webp" alt="webp.webp"></a></p><p><a href="https://www.jianshu.com/u/4757052c2a58" title="aishenla">aishenla</a></p><p>总资产4 (约0.30元)共写了1356字获得98个赞共34个粉丝</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;使用JWT实现Token认证&quot;&gt;&lt;a href=&quot;#使用JWT实现Token认证&quot; class=&quot;headerlink&quot; title=&quot;使用JWT实现Token认证&quot;&gt;&lt;/a&gt;使用JWT实现Token认证&lt;/h1&gt;&lt;h1 id=&quot;使用JWT实现Token认证-1&quot;</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="token" scheme="http://wstcly.xyz/tags/token/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>假如</title>
+    <link href="http://wstcly.xyz/2024/06/30/jia-ru/"/>
+    <id>http://wstcly.xyz/2024/06/30/jia-ru/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:47:37.477Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h1><p>想假如，却不能够。假如我不放手，多年以后，会怪我恨我或感动，想假如是最空虚的痛，为什么幸福都是幻梦，一靠近天堂也就快醒了。</p><p>或许，爱情更像是落叶，看似飞翔却在坠落。</p><p>凋零的不只是秋天，更是那曾经炙热的心。</p><p>真的可以倒流，你会做什么，一样选择我或不抱我，假如温柔放手，你是否懂得，走错了可以再回头。</p><p>真的有一天你也会夜半梦醒，后悔我或那个选择，想假如，是最空虚的痛，曾经拥有却又尽情挥霍。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;假如&quot;&gt;&lt;a href=&quot;#假如&quot; class=&quot;headerlink&quot; title=&quot;假如&quot;&gt;&lt;/a&gt;假如&lt;/h1&gt;&lt;p&gt;想假如，却不能够。假如我不放手，多年以后，会怪我恨我或感动，想假如是最空虚的痛，为什么幸福都是幻梦，一靠近天堂也就快醒了。&lt;/p&gt;
+&lt;p&gt;或</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="心情" scheme="http://wstcly.xyz/tags/%E5%BF%83%E6%83%85/"/>
+    
+    <category term="歌词" scheme="http://wstcly.xyz/tags/%E6%AD%8C%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>做你的眼睛</title>
+    <link href="http://wstcly.xyz/2024/06/30/zuo-ni-de-yan-jing/"/>
+    <id>http://wstcly.xyz/2024/06/30/zuo-ni-de-yan-jing/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T12:54:34.638Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="做你的眼睛"><a href="#做你的眼睛" class="headerlink" title="做你的眼睛"></a>做你的眼睛</h1><p>没人能只站在自己的位置，做出最正确的决定，从对方视角才能看清这个世界</p><p>很多在自己看来与错误毫无瓜葛的言语、行为，在对方的视角下就变成了最难以接受的事情。这似乎就是人性的弱点之一吧，总是从自我出发，在自我中不知不觉伤害了别人，等到发现才追悔莫及，然后再归咎到自己身上，让双方都受到情绪的惩罚。</p><p>能看到事情全貌的可能只有旁观者。我做不到照顾两个人的感受，同样你也不能。信任和宽容并不是只存在理性思维中的方法论，我已经在试着控制情绪、照顾你的情绪，但现在看来我做的并不是很好。我不知道该怎么不引起你的误解，相信你也在内心做了很多努力，不让自己情绪的堤岸垮塌，可真当洪水侵袭而来的时候，它还是在眼前完全垮塌，你我却无能为力。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;做你的眼睛&quot;&gt;&lt;a href=&quot;#做你的眼睛&quot; class=&quot;headerlink&quot; title=&quot;做你的眼睛&quot;&gt;&lt;/a&gt;做你的眼睛&lt;/h1&gt;&lt;p&gt;没人能只站在自己的位置，做出最正确的决定，从对方视角才能看清这个世界&lt;/p&gt;
+&lt;p&gt;很多在自己看来与错误毫无瓜葛的言</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://wstcly.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>入职培训</title>
+    <link href="http://wstcly.xyz/2024/06/30/ru-zhi-pei-xun/"/>
+    <id>http://wstcly.xyz/2024/06/30/ru-zhi-pei-xun/</id>
+    <published>2024-06-30T02:55:55.000Z</published>
+    <updated>2024-06-30T11:55:43.151Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="入职培训"><a href="#入职培训" class="headerlink" title="入职培训"></a>入职培训</h1><p>从到广东联通报道之日起，到今天已经一周过去了。</p><p>这一周内，我充分体验到了国企的形式化流程，填写资料，提交资料，破冰游戏，广州文化游，薪酬解读，员工等级体系，安全生产，然后是风采展示（ 每组两个节目，本组朗诵和歌唱）。节目的准备阶段并没有什么记忆点，简单的准备练习，动作设计，并没有抱有太高的期待，同时也并没有展现出十分完美的节目效果。由于彩排以及之前的所有排练并没有伴奏（bgm），因此在正是开始表演的时候，一开始就出现了一点小小的查错，当然，这对于整个舞台来说并没有什么的，因为整段垮掉的节目此起彼伏，接踵而至。少数的几个极具特色的节目，让我印象深刻的有：1、舞蹈（玛利亚）2、明天，你好（手语表演），可以算得上是完整且具有欣赏性。</p><p>除此之外，公司的员工食堂也可以说是一个福利吧，因为其物美价廉算是对工资的一种弥补吧，工资什么的，毕竟生活的幸福感才是我们的终极目标，所以呢，就不必太过于纠结了。</p><p>经过一周的铺垫，正规的入职培训姗姗来迟。占用了原本的周末时间去广州邮电职业技术学院报到，包括军训、专业培训、素质拓展等内容等。具体体验如何，就等着我前去检验了。</p><p>自我认为准备完毕，只待东风扬帆！（洗漱用品、衣服、鞋子、电子产品等等）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;入职培训&quot;&gt;&lt;a href=&quot;#入职培训&quot; class=&quot;headerlink&quot; title=&quot;入职培训&quot;&gt;&lt;/a&gt;入职培训&lt;/h1&gt;&lt;p&gt;从到广东联通报道之日起，到今天已经一周过去了。&lt;/p&gt;
+&lt;p&gt;这一周内，我充分体验到了国企的形式化流程，填写资料，提交资料，</summary>
+      
+    
+    
+    
+    <category term="印象笔记" scheme="http://wstcly.xyz/categories/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://wstcly.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+    <category term="职场" scheme="http://wstcly.xyz/tags/%E8%81%8C%E5%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>全自动图床方案分享（不止图片</title>
@@ -41,26 +515,6 @@
     <category term="图床" scheme="http://wstcly.xyz/tags/%E5%9B%BE%E5%BA%8A/"/>
     
     <category term="vercel" scheme="http://wstcly.xyz/tags/vercel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://wstcly.xyz/2024/06/29/hello-world/"/>
-    <id>http://wstcly.xyz/2024/06/29/hello-world/</id>
-    <published>2024-06-29T15:16:53.800Z</published>
-    <updated>2024-06-29T15:16:53.800Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
