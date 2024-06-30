@@ -413,6 +413,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
         <!-- 代码块折行 -->
@@ -447,7 +450,7 @@
 <p><img src="https://wstcly.top/picgo/image-20240630152022137.png" alt="image-20240630152022137"></p>
 <p><img src="https://wstcly.top/picgo/image-20240630152322853.png" alt="1"></p>
 <h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p>服务器目录变更，自动git commit</p>
-<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> watchdog<span class="token punctuation">.</span>observers <span class="token keyword">import</span> Observer
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> watchdog<span class="token punctuation">.</span>observers <span class="token keyword">import</span> Observer
 <span class="token keyword">from</span> watchdog<span class="token punctuation">.</span>events <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">import</span> time
 <span class="token keyword">from</span> git <span class="token keyword">import</span> Repo
@@ -520,7 +523,7 @@ git_path <span class="token operator">=</span> <span class="token string">'/www/
             time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
     <span class="token keyword">except</span> KeyboardInterrupt<span class="token punctuation">:</span>
         observer<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    observer<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    observer<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <img src="https://wstcly.top//picgo/v2-d5015c05c065ad3943839c63b5ebc855_720w.jpg" alt="test" style="zoom:50%;" />
 
@@ -760,6 +763,9 @@ git_path <span class="token operator">=</span> <span class="token string">'/www/
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
