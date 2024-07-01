@@ -1,0 +1,1397 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="78.数据可视化-1, heuwst">
+    <meta name="description" content="数据可视化-1在完成了对数据的透视之后，我们可以将数据透视的结果通过可视化的方式呈现出来，简单的说，就是将数据变成漂亮的统计图表，因为人类对颜色和形状会更加敏感，然后再进一步解读数据背后隐藏的商业价值。在之前的课程中，我们已经为大家展示过用">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>78.数据可视化-1 | wstのBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="wstのBlog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">wstのBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">wstのBlog</div>
+        <div class="logo-desc">
+            
+            a simple blog
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/githubwst/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/githubwst/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">78.数据可视化-1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">Python学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="数据可视化-1"><a href="#数据可视化-1" class="headerlink" title="数据可视化-1"></a>数据可视化-1</h2><p>在完成了对数据的透视之后，我们可以将数据透视的结果通过可视化的方式呈现出来，简单的说，就是将数据变成漂亮的统计图表，因为人类对颜色和形状会更加敏感，然后再进一步解读数据背后隐藏的商业价值。在之前的课程中，我们已经为大家展示过用使用<code>Series</code>或<code>DataFrame</code>对象的<code>plot</code>方法生成可视化图表的操作，本章我们为大家讲解这个绘图方法的基石，它就是大名鼎鼎的 matplotlib 库。</p>
+<p>在讲解 matplotlib 之前，请大家先看看下面这张图，它给出了常用的图表类型及其应用场景。我们在选择统计图表时，如果不知道做出怎样的选择最合适，相信这张图就能帮到你。简单的说，看趋势折线图，比数据柱状图，定关系散点图，查占比饼状图，看分布直方图，找离群箱线图。</p>
+<img src="res/choose_your_chart.png" style="zoom:65%;">
+
+<h3 id="导入和配置"><a href="#导入和配置" class="headerlink" title="导入和配置"></a>导入和配置</h3><p>之前的课程中，我们为大家讲解过如何安装和导入 matplotlib 库，如果不确定是否已经安装了 matplotlib，可以使用下面的魔法指令尝试安装或升级你的 matplotlib。</p>
+<pre class="language-none"><code class="language-none">%pip install -U matplotlib</code></pre>
+
+<p>为了解决 matplotlib 图表中文显示的问题，我们需要修改<code>pyplot</code>模块的<code>rcParams</code>配置参数，具体的操作如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">import matplotlib.pyplot as plt
+
+plt.rcParams[&#39;font.sans-serif&#39;].insert(0, &#39;SimHei&#39;)
+plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False</code></pre>
+
+<blockquote>
+<p><strong>说明</strong>：上面代码中的<code>SimHei</code>是字体名称，大家可以通过百度云盘下载并安装该字体，链接地址：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g?pwd=e7b4%E3%80%82%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E5%AE%89%E8%A3%85%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%EF%BC%8C%E5%AE%89%E8%A3%85%E4%B9%8B%E5%90%8E%E5%A6%82%E6%9E%9C%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AD%97%E4%BD%93%E5%8F%AB%E4%BB%80%E4%B9%88%E5%90%8D%E5%AD%97%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%88%B0%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%8D%E4%B8%BA%60.matplotlib%60%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%89%BE%E5%88%B0%60fontlist-v330.json%60%E6%96%87%E4%BB%B6%EF%BC%8C%E6%89%93%E5%BC%80%E5%90%8E%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%90%8D%E7%A7%B0%E7%AD%89%E4%BF%A1%E6%81%AF%E3%80%82%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%EF%BC%8C%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%90%8E%E5%9D%90%E6%A0%87%E8%BD%B4%E4%B8%8A%E7%9A%84%E8%B4%9F%E5%8F%B7%E5%B0%86%E4%BC%9A%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%EF%BC%8C%E9%9C%80%E8%A6%81%E5%B0%86%60axes.unicode_minus%60%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE%E4%B8%BA%60False%60%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%89%8D%E8%83%BD%E8%AE%A9%E5%9D%90%E6%A0%87%E8%BD%B4%E4%B8%8A%E7%9A%84%E8%B4%9F%E5%8F%B7%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E3%80%82">https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g?pwd=e7b4。你可以尝试安装其他的中文字体，安装之后如果不知道字体叫什么名字，可以到用户主目录下名为`.matplotlib`的文件夹中找到`fontlist-v330.json`文件，打开后可以看到字体文件的路径和字体的名称等信息。需要注意的是，使用中文字体后坐标轴上的负号将会无法显示，需要将`axes.unicode_minus`参数设置为`False`，这样才能让坐标轴上的负号正常显示。</a></p>
+</blockquote>
+<p>通过下面的魔法指令，我们可以在绘图时生成<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2">矢量图</a>（SVG - Scalable Vector Graphics），矢量图的特点是不会因为放大、缩小或旋转等操作而失真，看起来会舒服很多。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">%config InlineBackend.figure_format&#x3D;&#39;svg&#39;</code></pre>
+
+<h3 id="创建画布"><a href="#创建画布" class="headerlink" title="创建画布"></a>创建画布</h3><p><code>pyplot</code>模块的<code>figure</code>函数可以用来创建画布，创建画布时，可以通过<code>figsize</code>参数指定画布的尺寸（默认值是<code>[6.4, 4.8]</code>）；可以通过<code>dpi</code>参数设置绘图的分辨率，因为<code>dpi</code>代表了每英寸的像素点数量。除此之外，还可以通过<code>facecolor</code>参数设置画布的背景色。<code>figure</code>函数的返回值是一个<code>Figure</code>对象，它代表了绘图使用的画布，我们可以基于画布来创建绘图使用的坐标系。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.figure(figsize&#x3D;(8, 4), dpi&#x3D;120, facecolor&#x3D;&#39;darkgray&#39;)</code></pre>
+
+<h3 id="创建坐标系"><a href="#创建坐标系" class="headerlink" title="创建坐标系"></a>创建坐标系</h3><p>可以直接使用<code>pyplot</code>模块的<code>subplot</code>函数来创建坐标系，该函数会返回<code>Axes</code>对象。<code>subplot</code>的前三个参数分别用来指定整个画布分成几行几列以及当前坐标系的索引，这三个参数的默认值都是<code>1</code>。如果没有创建坐标系，我们绘图时会使用画布上默认的也是唯一的一个坐标系；如果需要在画布上创建多个坐标系，就可以使用该函数。当然，我们也可以通过上面创建的<code>Figure</code>对象的<code>add_subplot</code>方法或<code>add_axes</code>方法来创建坐标系，前者跟<code>subplot</code>函数的作用一致，后者会产生嵌套的坐标系。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.subplot(2, 2, 1)</code></pre>
+
+<h3 id="绘制图表"><a href="#绘制图表" class="headerlink" title="绘制图表"></a>绘制图表</h3><h4 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h4><p>在绘图时，如果没有先调用<code>figure</code>函数和<code>subplot</code>函数，我们将使用默认的画布和坐标系，如果要绘制折线图，可以使用<code>pyplot</code>模块的<code>plot</code>函数，并指定横轴和纵轴的数据。折线图最适合用来观察数据的趋势，尤其是当横坐标代表时间的情况下。我们可以使用<code>plot</code>函数的<code>color</code>参数来定制折线的颜色，可以使用<code>marker</code>参数来定制数据点的标记（例如：<code>*</code>表示五角星，<code>^</code>表示三角形，<code>o</code>表示小圆圈等），可以使用<code>linestyle</code>参数来定制折线的样式（例如：<code>-</code>表示实线，<code>--</code>表示虚线，<code>:</code>表示点线等），可以使用<code>linewidth</code>参数来定制折线的粗细。 下面的代码绘制了一条正弦曲线，其中<code>marker=&#39;*&#39;</code>会将数据点的标记设置为五角星形状，而<code>color=&#39;red&#39;</code>会将折线绘制为红色。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">import numpy as np
+
+x &#x3D; np.linspace(-2 * np.pi, 2 * np.pi, 120)
+y &#x3D; np.sin(x)
+
+# 创建画布
+plt.figure(figsize&#x3D;(8, 4), dpi&#x3D;120)
+# 绘制折线图
+plt.plot(x, y, linewidth&#x3D;2, marker&#x3D;&#39;*&#39;, color&#x3D;&#39;red&#39;)
+# 显示绘图
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501173344.png" style="zoom:50%;">
+
+<p>如果要在一个坐标系上同时绘制正弦和余弦曲线，可以对上面的代码稍作修改。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">x &#x3D; np.linspace(-2 * np.pi, 2 * np.pi, 120)
+y1, y2 &#x3D; np.sin(x), np.cos(x)
+
+plt.figure(figsize&#x3D;(8, 4), dpi&#x3D;120)
+plt.plot(x, y1, linewidth&#x3D;2, marker&#x3D;&#39;*&#39;, color&#x3D;&#39;red&#39;)
+plt.plot(x, y2, linewidth&#x3D;2, marker&#x3D;&#39;^&#39;, color&#x3D;&#39;blue&#39;)
+# 定制图表上的标注（annotate函数的参数如果不理解可以先不管它）
+plt.annotate(&#39;sin(x)&#39;, xytext&#x3D;(0.5, -0.75), xy&#x3D;(0, -0.25), fontsize&#x3D;12, arrowprops&#x3D;&#123;
+    &#39;arrowstyle&#39;: &#39;-&gt;&#39;, &#39;color&#39;: &#39;darkgreen&#39;, &#39;connectionstyle&#39;: &#39;angle3, angleA&#x3D;90, angleB&#x3D;0&#39;
+&#125;)
+plt.annotate(&#39;cos(x)&#39;, xytext&#x3D;(-3, 0.75), xy&#x3D;(-1.25, 0.5), fontsize&#x3D;12, arrowprops&#x3D;&#123;
+    &#39;arrowstyle&#39;: &#39;-&gt;&#39;, &#39;color&#39;: &#39;darkgreen&#39;, &#39;connectionstyle&#39;: &#39;arc3, rad&#x3D;0.35&#39;
+&#125;)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220502095949.png" style="zoom:50%;">
+
+<p>如果要使用两个坐标系分别绘制正弦和余弦，可以用上面提到的<code>subplot</code>函数来创建坐标系，然后再绘图。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.figure(figsize&#x3D;(8, 4), dpi&#x3D;120)
+# 创建坐标系（第1个图）
+plt.subplot(2, 1, 1)
+plt.plot(x, y1, linewidth&#x3D;2, marker&#x3D;&#39;*&#39;, color&#x3D;&#39;red&#39;)
+# 创建坐标系（第2个图）
+plt.subplot(2, 1, 2)
+plt.plot(x, y2, linewidth&#x3D;2, marker&#x3D;&#39;^&#39;, color&#x3D;&#39;blue&#39;)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501173446.png" style="zoom:50%;">
+
+<p>当然也可以像下面这么做，大家可以运行代码看看跟上面的图有什么区别。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.figure(figsize&#x3D;(8, 4), dpi&#x3D;120)
+plt.subplot(1, 2, 1)
+plt.plot(x, y1, linewidth&#x3D;2, marker&#x3D;&#39;*&#39;, color&#x3D;&#39;red&#39;)
+plt.subplot(1, 2, 2)
+plt.plot(x, y2, linewidth&#x3D;2, marker&#x3D;&#39;^&#39;, color&#x3D;&#39;blue&#39;)
+plt.show()</code></pre>
+
+<p>然后，再试一试下面这个代码，看看运行效果如何。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">fig &#x3D; plt.figure(figsize&#x3D;(10, 4), dpi&#x3D;120)
+plt.plot(x, y1, linewidth&#x3D;2, marker&#x3D;&#39;*&#39;, color&#x3D;&#39;red&#39;)
+# 用Figure对象的add_axes方法在现有坐标系中嵌套一个新的坐标系，该方法的参数是一个四元组，
+# 代表了新坐标系在原坐标系中的位置，前两个值是左下角的位置，后两个值是坐标系的宽度和高度
+ax &#x3D; fig.add_axes((0.595, 0.6, 0.3,0.25))
+ax.plot(x, y2, marker&#x3D;&#39;^&#39;, color&#x3D;&#39;blue&#39;)
+ax &#x3D; fig.add_axes((0.155, 0.2, 0.3,0.25))
+ax.plot(x, y2, marker&#x3D;&#39;^&#39;, color&#x3D;&#39;green&#39;)
+plt.show()</code></pre>
+
+<h4 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h4><p>散点图可以帮助我们了解两个变量的关系，如果需要了解三个变量的关系，可以将散点图升级为气泡图。下面的代码中，<code>x</code>和<code>y</code>两个数组分别表示每个月的收入和每个月网购的支出，如果我们想了解<code>x</code>和<code>y</code>是否存在相关关系，就可以绘制如下所示的散点图。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">x &#x3D; np.array([5550, 7500, 10500, 15000, 20000, 25000, 30000, 40000])
+y &#x3D; np.array([800, 1800, 1250, 2000, 1800, 2100, 2500, 3500])
+
+plt.figure(figsize&#x3D;(6, 4), dpi&#x3D;120)
+plt.scatter(x, y)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501173034.png" style="zoom:50%;">
+
+<h4 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h4><p>在对比数据的差异时，柱状图是非常棒的选择，我们可以使用<code>pyplot</code>模块的<code>bar</code>函数来生成柱状图，也可以使用<code>barh</code>函数来生成水平柱状图（也称为“条状图”）。我们先为柱状图准备一些数据，代码如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">x &#x3D; np.arange(4)
+y1 &#x3D; np.random.randint(20, 50, 4)
+y2 &#x3D; np.random.randint(10, 60, 4)</code></pre>
+
+<p>绘制柱状图的代码。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.figure(figsize&#x3D;(6, 4), dpi&#x3D;120)
+# 通过横坐标的偏移，让两组数据对应的柱子分开，width参数控制柱子的粗细，label参数为柱子添加标签
+plt.bar(x - 0.1, y1, width&#x3D;0.2, label&#x3D;&#39;销售A组&#39;)
+plt.bar(x + 0.1, y2, width&#x3D;0.2, label&#x3D;&#39;销售B组&#39;)
+# 定制横轴的刻度
+plt.xticks(x, labels&#x3D;[&#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;Q4&#39;])
+# 定制显示图例
+plt.legend()
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501173557.png" style="zoom:50%;">
+
+<p>如果想绘制堆叠柱状图，可以对上面的代码稍作修改，如下所示。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">labels &#x3D; [&#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;Q4&#39;]
+plt.figure(figsize&#x3D;(6, 4), dpi&#x3D;120)
+plt.bar(labels, y1, width&#x3D;0.4, label&#x3D;&#39;销售A组&#39;)
+# 注意：堆叠柱状图的关键是将之前的柱子作为新柱子的底部，可以通过bottom参数指定底部数据，新柱子绘制在底部数据之上
+plt.bar(labels, y2, width&#x3D;0.4, bottom&#x3D;y1, label&#x3D;&#39;销售B组&#39;)
+plt.legend(loc&#x3D;&#39;lower right&#39;)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501173645.png" style="zoom:50%;">
+
+<h4 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h4><p>饼状图通常简称为饼图，是一个将数据划分为几个扇形区域的统计图表，它主要用于描述数量、频率等之间的相对关系。在饼图中，每个扇形区域的大小就是其所表示的数量的比例，这些扇形区域合在一起刚好是一个完整的饼。在需要展示数据构成的场景下，饼状图、树状图和瀑布图是不错的选择，我们可以使用<code>pyplot</code>模块的<code>pie</code>函数来绘制饼图，代码如下所示。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">data &#x3D; np.random.randint(100, 500, 7)
+labels &#x3D; [&#39;苹果&#39;, &#39;香蕉&#39;, &#39;桃子&#39;, &#39;荔枝&#39;, &#39;石榴&#39;, &#39;山竹&#39;, &#39;榴莲&#39;]
+
+plt.figure(figsize&#x3D;(5, 5), dpi&#x3D;120)
+plt.pie(
+    data,
+    # 自动显示百分比
+    autopct&#x3D;&#39;%.1f%%&#39;,
+    # 饼图的半径
+    radius&#x3D;1,
+    # 百分比到圆心的距离
+    pctdistance&#x3D;0.8,
+    # 颜色（随机生成）
+    colors&#x3D;np.random.rand(7, 3),
+    # 分离距离
+    # explode&#x3D;[0.05, 0, 0.1, 0, 0, 0, 0],
+    # 阴影效果
+    # shadow&#x3D;True,
+    # 字体属性
+    textprops&#x3D;dict(fontsize&#x3D;8, color&#x3D;&#39;black&#39;),
+    # 楔子属性（生成环状饼图的关键）
+    wedgeprops&#x3D;dict(linewidth&#x3D;1, width&#x3D;0.35),
+    # 标签
+    labels&#x3D;labels
+)
+# 定制图表的标题
+plt.title(&#39;水果销售额占比&#39;)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220502094128.png" style="zoom:50%;">
+
+<blockquote>
+<p><strong>说明</strong>：大家可以试一试将上面代码中被注释的部分恢复，看看有什么样的效果。</p>
+</blockquote>
+<h4 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h4><p>在统计学中，直方图是一种展示数据分布情况的图形，是一种二维统计图表，它的两个坐标分别是统计样本和该样本对应的某个属性的度量。下面的数据是某学校100名男学生的身高，如果我们想知道数据的分布，就可以使用直方图。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">heights &#x3D; np.array([
+    170, 163, 174, 164, 159, 168, 165, 171, 171, 167, 
+    165, 161, 175, 170, 174, 170, 174, 170, 173, 173, 
+    167, 169, 173, 153, 165, 169, 158, 166, 164, 173, 
+    162, 171, 173, 171, 165, 152, 163, 170, 171, 163, 
+    165, 166, 155, 155, 171, 161, 167, 172, 164, 155, 
+    168, 171, 173, 169, 165, 162, 168, 177, 174, 178, 
+    161, 180, 155, 155, 166, 175, 159, 169, 165, 174, 
+    175, 160, 152, 168, 164, 175, 168, 183, 166, 166, 
+    182, 174, 167, 168, 176, 170, 169, 173, 177, 168, 
+    172, 159, 173, 185, 161, 170, 170, 184, 171, 172
+])</code></pre>
+
+<p>可以使用<code>pyplot</code>模块的<code>hist</code>函数来绘制直方图，其中<code>bins</code>参数代表了我们使用的分箱方式（身高从150厘米到190厘米，每5厘米为一个分箱），代码如下所示。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.figure(figsize&#x3D;(6, 4), dpi&#x3D;120)
+# 绘制直方图
+plt.hist(heights, bins&#x3D;np.arange(145, 196, 5), color&#x3D;&#39;darkcyan&#39;)
+# 定制横轴标签
+plt.xlabel(&#39;身高&#39;)
+# 定制纵轴标签
+plt.ylabel(&#39;概率密度&#39;)
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/hist_count.png" style="zoom:50%;">
+
+<p>绘制直方图时，如果将<code>hist</code>函数的<code>density</code>参数修改为<code>True</code>，同时将<code>cumulative</code>参数也修改为<code>True</code>，那么一方面纵轴会显示为概率密度，而图表会绘制概率的累计分布，如下所示。</p>
+<p>代码：</p>
+<pre class="language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">120</span><span class="token punctuation">)</span>
+<span class="token comment"># 绘制直方图</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>heights<span class="token punctuation">,</span> bins<span class="token operator">=</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">145</span><span class="token punctuation">,</span> <span class="token number">196</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'darkcyan'</span><span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> cumulative<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment"># 定制横轴标签</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'身高'</span><span class="token punctuation">)</span>
+<span class="token comment"># 定制纵轴标签</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'概率'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p>输出：</p>
+<img src="res/hist_cumulative.png" style="zoom:50%;">
+
+<h4 id="箱线图"><a href="#箱线图" class="headerlink" title="箱线图"></a>箱线图</h4><p>箱线图又叫箱型图或盒须图，是一种用于展示一组数据分散情况的统计图表，如下所示。因图形如箱子，而且在上下四分位数之外有线条像胡须延伸出去而得名。在箱线图中，箱子的上边界是上四分位数（$Q_3$）的位置，箱子的下边界是下四分位数（$Q_1$）的位置，箱子中间的线条是中位数（$Q_2$）的位置，而箱子的长度就是四分位距离（IQR）。除此之外，箱子上方线条的边界是最大值，箱子下方线条的边界是最小值，这两条线之外的点就是离群值（outlier）。所谓离群值，是指数据小于$Q_1 - 1.5 \times IQR$或数据大于$Q_3 + 1.5 \times IQR$的值，公式中的<code>1.5</code>还可以替换为<code>3</code>来发现极端离群值（extreme outlier），而介于<code>1.5</code>到<code>3</code>之间的离群值通常称之为适度离群值（mild outlier）。</p>
+<p>可以使用<code>pyplot</code>模块的<code>boxplot</code>函数来绘制箱线图，代码如下所示。</p>
+<p>代码：</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python"># 数组中有47个[0, 100)范围的随机数
+data &#x3D; np.random.randint(0, 100, 47)
+# 向数组中添加三个可能是离群点的数据
+data &#x3D; np.append(data, 160)
+data &#x3D; np.append(data, 200)
+data &#x3D; np.append(data, -50)
+
+plt.figure(figsize&#x3D;(6, 4), dpi&#x3D;120)
+# whis参数的默认值是1.5，将其设置为3可以检测极端离群值，showmeans&#x3D;True表示在图中标记均值的位置
+plt.boxplot(data, whis&#x3D;1.5, showmeans&#x3D;True, notch&#x3D;True)
+# 定制纵轴的取值范围
+plt.ylim([-100, 250])
+# 定制横轴的刻度
+plt.xticks([1], labels&#x3D;[&#39;data&#39;])
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/20220501172802.png" style="zoom:50%;" />
+
+<blockquote>
+<p><strong>说明</strong>：由于数据是随机生成的，大家运行上面的代码生成的图表可能跟我这里并不相同，以实际运行结果为准。</p>
+</blockquote>
+<h3 id="显示和保存图表"><a href="#显示和保存图表" class="headerlink" title="显示和保存图表"></a>显示和保存图表</h3><p>可以使用<code>pyplot</code>模块的<code>show</code>函数来显示绘制的图表，我们在上面的代码中使用过这个函数。如果希望保存图表，可以使用<code>savefig</code>函数。需要注意的是，如果要同时显示和保存图表，应该先执行<code>savefig</code>函数，再执行<code>show</code>函数，因为在调用<code>show</code>函数时，图表已经被释放，位于<code>show</code>函数之后的<code>savefig</code>保存的只是一个空白的区域。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">plt.savefig(&#39;chart.png&#39;)
+plt.show()</code></pre>
+
+<h3 id="其他图表"><a href="#其他图表" class="headerlink" title="其他图表"></a>其他图表</h3><p>使用 matplotlib，我们还可以绘制出其他的统计图表（如：雷达图、玫瑰图、热力图等），但实际工作中，使用频率最高的几类图表我们在上面已经为大家完整的展示出来了。此外，matplotlib 还有很多对统计图表进行定制的细节，例如定制坐标轴、定制图表上的文字和标签等。如果想了解如何用 matplotlib 绘制和定制更多的统计图表，可以直接查看 matplotlib 官方网站上的<a target="_blank" rel="noopener" href="https://matplotlib.org/stable/tutorials/index.html">文档</a>和<a target="_blank" rel="noopener" href="https://matplotlib.org/stable/gallery/index.html">示例</a>，在下一个章节我们会为大家做一个简要的介绍。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Heuwst</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://wstcly.xyz/2024/07/01/78.shu-ju-ke-shi-hua-1/">http://wstcly.xyz/2024/07/01/78.shu-ju-ke-shi-hua-1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Heuwst</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">Python学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/07/01/77.shen-ru-qian-chu-pandas-6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="77.深入浅出pandas-6">
+                        
+                        <span class="card-title">77.深入浅出pandas-6</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/07/01/79.shu-ju-ke-shi-hua-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="79.数据可视化-2">
+                        
+                        <span class="card-title">79.数据可视化-2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024</span>
+            
+            <a href="/about" target="_blank">Heuwst</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">329.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://wstcly.xyz"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1657 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="49.Cookie和Session, heuwst">
+    <meta name="description" content="Cookie和Session我们继续来完成上一章节中的项目，实现“用户登录”的功能，并限制只有登录的用户才能投票。
+用户登录的准备工作我们先为实现用户登录做一些准备工作。
+
+创建用户模型。之前我们讲解过如果通过Django的ORM实现从二维">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>49.Cookie和Session | wstのBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="wstのBlog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">wstのBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">wstのBlog</div>
+        <div class="logo-desc">
+            
+            a simple blog
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/githubwst/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/githubwst/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">49.Cookie和Session</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">Python学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    28 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Cookie和Session"><a href="#Cookie和Session" class="headerlink" title="Cookie和Session"></a>Cookie和Session</h2><p>我们继续来完成上一章节中的项目，实现“用户登录”的功能，并限制只有登录的用户才能投票。</p>
+<h3 id="用户登录的准备工作"><a href="#用户登录的准备工作" class="headerlink" title="用户登录的准备工作"></a>用户登录的准备工作</h3><p>我们先为实现用户登录做一些准备工作。</p>
+<ol>
+<li><p>创建用户模型。之前我们讲解过如果通过Django的ORM实现从二维表到模型的转换（反向工程），这次我们尝试把模型变成二维表（正向工程）。</p>
+ <pre class="language-Python" data-language="Python"><code class="language-Python">class User(models.Model):
+    &quot;&quot;&quot;用户&quot;&quot;&quot;
+    no &#x3D; models.AutoField(primary_key&#x3D;True, verbose_name&#x3D;&#39;编号&#39;)
+    username &#x3D; models.CharField(max_length&#x3D;20, unique&#x3D;True, verbose_name&#x3D;&#39;用户名&#39;)
+    password &#x3D; models.CharField(max_length&#x3D;32, verbose_name&#x3D;&#39;密码&#39;)
+    tel &#x3D; models.CharField(max_length&#x3D;20, verbose_name&#x3D;&#39;手机号&#39;)
+    reg_date &#x3D; models.DateTimeField(auto_now_add&#x3D;True, verbose_name&#x3D;&#39;注册时间&#39;)
+    last_visit &#x3D; models.DateTimeField(null&#x3D;True, verbose_name&#x3D;&#39;最后登录时间&#39;)
+
+    class Meta:
+        db_table &#x3D; &#39;tb_user&#39;
+        verbose_name &#x3D; &#39;用户&#39;
+        verbose_name_plural &#x3D; &#39;用户&#39;</code></pre>
+</li>
+<li><p>使用下面的命令生成迁移文件并执行迁移，将<code>User</code>模型直接变成关系型数据库中的二维表<code>tb_user</code>。</p>
+ <pre class="language-Bash" data-language="Bash"><code class="language-Bash">python manage.py makemigrations polls
+python manage.py migrate polls</code></pre>
+</li>
+<li><p>用下面的SQL语句直接插入两条测试数据，通常不能将用户的密码直接保存在数据库中，因此我们将用户密码处理成对应的MD5摘要。MD5消息摘要算法是一种被广泛使用的密码哈希函数（散列函数），可以产生出一个128位（比特）的哈希值（散列值），用于确保信息传输完整一致。在使用哈希值时，通常会将哈希值表示为16进制字符串，因此128位的MD5摘要通常表示为32个十六进制符号。</p>
+ <pre class="language-SQL" data-language="SQL"><code class="language-SQL">insert into &#96;tb_user&#96;
+    (&#96;username&#96;, &#96;password&#96;, &#96;tel&#96;, &#96;reg_date&#96;)
+values
+    (&#39;wangdachui&#39;, &#39;1c63129ae9db9c60c3e8aa94d3e00495&#39;, &#39;13122334455&#39;, now()),
+    (&#39;hellokitty&#39;, &#39;c6f8cf68e5f68b0aa4680e089ee4742c&#39;, &#39;13890006789&#39;, now());</code></pre>
+
+<blockquote>
+<p><strong>说明</strong>：上面创建的两个用户<code>wangdachui</code>和<code>hellokitty</code>密码分别是<code>1qaz2wsx</code>和<code>Abc123!!</code>。</p>
+</blockquote>
+</li>
+<li><p>我们在应用下增加一个名为<code>utils.py</code>的模块用来保存需要使用的工具函数。Python标准库中的<code>hashlib</code>模块封装了常用的哈希算法，包括：MD5、SHA1、SHA256等。下面是使用<code>hashlib</code>中的<code>md5</code>类将字符串处理成MD5摘要的函数如下所示。</p>
+ <pre class="language-Python" data-language="Python"><code class="language-Python">import hashlib
+
+
+def gen_md5_digest(content):
+    return hashlib.md5(content.encode()).hexdigest()</code></pre>
+</li>
+<li><p>编写用户登录的视图函数和模板页。</p>
+<p> 添加渲染登录页面的视图函数：</p>
+ <pre class="language-Python" data-language="Python"><code class="language-Python">def login(request: HttpRequest) -&gt; HttpResponse:
+    hint &#x3D; &#39;&#39;
+    return render(request, &#39;login.html&#39;, &#123;&#39;hint&#39;: hint&#125;)</code></pre>
+
+<p> 增加<code>login.html</code>模板页：</p>
+ <pre class="language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang&#x3D;&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+    &lt;title&gt;用户登录&lt;&#x2F;title&gt;
+    &lt;style&gt;
+        #container &#123;
+            width: 520px;
+            margin: 10px auto;
+        &#125;
+        .input &#123;
+            margin: 20px 0;
+            width: 460px;
+            height: 40px;
+        &#125;
+        .input&gt;label &#123;
+            display: inline-block;
+            width: 140px;
+            text-align: right;
+        &#125;
+        .input&gt;img &#123;
+            width: 150px;
+            vertical-align: middle;
+        &#125;
+        input[name&#x3D;captcha] &#123;
+            vertical-align: middle;
+        &#125;
+        form+div &#123;
+            margin-top: 20px;
+        &#125;
+        form+div&gt;a &#123;
+            text-decoration: none;
+            color: darkcyan;
+            font-size: 1.2em;
+        &#125;
+        .button &#123;
+            width: 500px;
+            text-align: center;
+            margin-top: 20px;
+        &#125;
+        .hint &#123;
+            color: red;
+            font-size: 12px;
+        &#125;
+    &lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+    &lt;div id&#x3D;&quot;container&quot;&gt;
+        &lt;h1&gt;用户登录&lt;&#x2F;h1&gt;
+        &lt;hr&gt;
+        &lt;p class&#x3D;&quot;hint&quot;&gt;&#123;&#123; hint &#125;&#125;&lt;&#x2F;p&gt;
+        &lt;form action&#x3D;&quot;&#x2F;login&#x2F;&quot; method&#x3D;&quot;post&quot;&gt;
+            &#123;% csrf_token %&#125;
+            &lt;fieldset&gt;
+                &lt;legend&gt;用户信息&lt;&#x2F;legend&gt;
+                &lt;div class&#x3D;&quot;input&quot;&gt;
+                    &lt;label&gt;用户名：&lt;&#x2F;label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot;&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class&#x3D;&quot;input&quot;&gt;
+                    &lt;label&gt;密码：&lt;&#x2F;label&gt;
+                    &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot;&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class&#x3D;&quot;input&quot;&gt;
+                    &lt;label&gt;验证码：&lt;&#x2F;label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;captcha&quot;&gt;
+                    &lt;img id&#x3D;&quot;code&quot; src&#x3D;&quot;&#x2F;captcha&#x2F;&quot; alt&#x3D;&quot;&quot; width&#x3D;&quot;150&quot; height&#x3D;&quot;40&quot;&gt;
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;fieldset&gt;
+            &lt;div class&#x3D;&quot;button&quot;&gt;
+                &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;登录&quot;&gt;
+                &lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;重置&quot;&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;form&gt;
+        &lt;div&gt;
+            &lt;a href&#x3D;&quot;&#x2F;&quot;&gt;返回首页&lt;&#x2F;a&gt;
+            &lt;a href&#x3D;&quot;&#x2F;register&#x2F;&quot;&gt;注册新用户&lt;&#x2F;a&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</code></pre>
+
+<p> 注意，在上面的表单中，我们使用了模板指令<code>&#123;% csrf_token %&#125;</code>为表单添加一个隐藏域（大家可以在浏览器中显示网页源代码就可以看到这个指令生成的<code>type</code>属性为<code>hidden</code>的<code>input</code>标签），它的作用是在表单中生成一个随机令牌（token）来防范<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0">跨站请求伪造</a>（简称为CSRF），这也是Django在提交表单时的硬性要求。如果我们的表单中没有这样的令牌，那么提交表单时，Django框架会产生一个响应状态码为<code>403</code>的响应（禁止访问），除非我们设置了免除CSRF令牌。下图是一个关于CSRF简单生动的例子。</p>
+<p> <img src="/./res/csrf-simple.png"></p>
+</li>
+</ol>
+<p>接下来，我们可以编写提供验证码和实现用户登录的视图函数，在此之前，我们先说说一个Web应用实现用户跟踪的方式以及Django框架对实现用户跟踪所提供的支持。对一个Web应用来说，用户登录成功后必然要让服务器能够记住该用户已经登录，这样服务器才能为这个用户提供更好的服务，而且上面说到的CSRF也是通过钓鱼网站来套取用户登录信息进行恶意操作的攻击手段，这些都是以用户跟踪技术为基础的。在理解了这些背景知识后，我们就清楚用户登录时到底需要执行哪些操作。</p>
+<h3 id="实现用户跟踪"><a href="#实现用户跟踪" class="headerlink" title="实现用户跟踪"></a>实现用户跟踪</h3><p>如今，一个网站如果不通过某种方式记住你是谁以及你之前在网站的活动情况，失去的就是网站的可用性和便利性，继而很有可能导致网站用户的流式，所以记住一个用户（更专业的说法叫<strong>用户跟踪</strong>）对绝大多数Web应用来说都是必需的功能。</p>
+<p>在服务器端，我们想记住一个用户最简单的办法就是创建一个对象，通过这个对象就可以把用户相关的信息都保存起来，这个对象就是我们常说的session（用户会话对象）。那么问题来了，HTTP本身是一个<strong>无连接</strong>（每次请求和响应的过程中，服务器一旦完成对客户端请求的响应之后就断开连接）、<strong>无状态</strong>（客户端再次发起对服务器的请求时，服务器无法得知这个客户端之前的任何信息）的协议，即便服务器通过session对象保留了用户数据，还得通过某种方式来确定当前的请求与之前保存过的哪一个session是有关联的。相信很多人都能想到，我们可以给每个session对象分配一个全局唯一的标识符来识别session对象，我们姑且称之为sessionid，每次客户端发起请求时，只要携带上这个sessionid，就有办法找到与之对应的session对象，从而实现在两次请求之间记住该用户的信息，也就是我们之前说的用户跟踪。</p>
+<p>要让客户端记住并在每次请求时带上sessionid又有以下几种做法：</p>
+<ol>
+<li><p>URL重写。所谓URL重写就是在URL中携带sessionid，例如：<code>http://www.example.com/index.html?sessionid=123456</code>，服务器通过获取sessionid参数的值来取到与之对应的session对象。</p>
+</li>
+<li><p>隐藏域（隐式表单域）。在提交表单的时候，可以通过在表单中设置隐藏域向服务器发送额外的数据。例如：<code>&lt;input type=&quot;hidden&quot; name=&quot;sessionid&quot; value=&quot;123456&quot;&gt;</code>。</p>
+</li>
+<li><p>本地存储。现在的浏览器都支持多种本地存储方案，包括：cookie、localStorage、sessionStorage、IndexedDB等。在这些方案中，cookie是历史最为悠久也是被诟病得最多的一种方案，也是我们接下来首先为大家讲解的一种方案。简单的说，cookie是一种以键值对方式保存在浏览器临时文件中的数据，每次请求时，请求头中会携带本站点的cookie到服务器，那么只要将sessionid写入cookie，下次请求时服务器只要读取请求头中的cookie就能够获得这个sessionid，如下图所示。</p>
+<p><img src="/./res/sessionid_from_cookie.png"></p>
+<p>在HTML5时代要，除了cookie，还可以使用新的本地存储API来保存数据，就是刚才提到的localStorage、sessionStorage、IndexedDB等技术，如下图所示。</p>
+<p><img src="/./res/cookie_xstorage_indexeddb.png"></p>
+</li>
+</ol>
+<p><strong>总结一下</strong>，要实现用户跟踪，服务器端可以为每个用户会话创建一个session对象并将session对象的ID写入到浏览器的cookie中；用户下次请求服务器时，浏览器会在HTTP请求头中携带该网站保存的cookie信息，这样服务器就可以从cookie中找到session对象的ID并根据此ID获取到之前创建的session对象；由于session对象可以用键值对的方式保存用户数据，这样之前保存在session对象中的信息可以悉数取出，服务器也可以根据这些信息判定用户身份和了解用户偏好，为用户提供更好的个性化服务。</p>
+<h3 id="Django框架对session的支持"><a href="#Django框架对session的支持" class="headerlink" title="Django框架对session的支持"></a>Django框架对session的支持</h3><p>在创建Django项目时，默认的配置文件<code>settings.py</code>文件中已经激活了一个名为<code>SessionMiddleware</code>的中间件（关于中间件的知识我们在后面的章节做详细讲解，这里只需要知道它的存在即可），因为这个中间件的存在，我们可以直接通过请求对象的<code>session</code>属性来操作会话对象。前面我们说过，<code>session</code>属性是一个像字典一样可以读写数据的容器对象，因此我们可以使用“键值对”的方式来保留用户数据。与此同时，<code>SessionMiddleware</code>中间件还封装了对cookie的操作，在cookie中保存了sessionid，这一点我们在上面已经提到过了。</p>
+<p>在默认情况下，Django将session的数据序列化后保存在关系型数据库中，在Django 1.6以后的版本中，默认的序列化数据的方式是JSON序列化，而在此之前一直使用Pickle序列化。JSON序列化和Pickle序列化的差别在于前者将对象序列化为字符串（字符形式），而后者将对象序列化为字节串（二进制形式），因为安全方面的原因，JSON序列化成为了目前Django框架默认序列化数据的方式，这就要求在我们保存在session中的数据必须是能够JSON序列化的，否则就会引发异常。还有一点需要说明的是，使用关系型数据库保存session中的数据在大多数时候并不是最好的选择，因为数据库可能会承受巨大的压力而成为系统性能的瓶颈，在后面的章节中我们会告诉大家如何将session保存到缓存服务中以提升系统的性能。</p>
+<h3 id="实现用户登录验证"><a href="#实现用户登录验证" class="headerlink" title="实现用户登录验证"></a>实现用户登录验证</h3><p>首先，我们在刚才的<code>polls/utils.py</code>文件中编写生成随机验证码的函数<code>gen_random_code</code>，内容如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">import random
+
+ALL_CHARS &#x3D; &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;
+
+
+def gen_random_code(length&#x3D;4):
+    return &#39;&#39;.join(random.choices(ALL_CHARS, k&#x3D;length))</code></pre>
+
+<p>编写生成验证码图片的类<code>Captcha</code>。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">&quot;&quot;&quot;
+图片验证码
+&quot;&quot;&quot;
+import os
+import random
+from io import BytesIO
+
+from PIL import Image
+from PIL import ImageFilter
+from PIL.ImageDraw import Draw
+from PIL.ImageFont import truetype
+
+
+class Bezier:
+    &quot;&quot;&quot;贝塞尔曲线&quot;&quot;&quot;
+
+    def __init__(self):
+        self.tsequence &#x3D; tuple([t &#x2F; 20.0 for t in range(21)])
+        self.beziers &#x3D; &#123;&#125;
+
+    def make_bezier(self, n):
+        &quot;&quot;&quot;绘制贝塞尔曲线&quot;&quot;&quot;
+        try:
+            return self.beziers[n]
+        except KeyError:
+            combinations &#x3D; pascal_row(n - 1)
+            result &#x3D; []
+            for t in self.tsequence:
+                tpowers &#x3D; (t ** i for i in range(n))
+                upowers &#x3D; ((1 - t) ** i for i in range(n - 1, -1, -1))
+                coefs &#x3D; [c * a * b for c, a, b in zip(combinations,
+                                                      tpowers, upowers)]
+                result.append(coefs)
+            self.beziers[n] &#x3D; result
+            return result
+
+
+class Captcha:
+    &quot;&quot;&quot;验证码&quot;&quot;&quot;
+
+    def __init__(self, width, height, fonts&#x3D;None, color&#x3D;None):
+        self._image &#x3D; None
+        self._fonts &#x3D; fonts if fonts else \
+            [os.path.join(os.path.dirname(__file__), &#39;fonts&#39;, font)
+             for font in [&#39;Arial.ttf&#39;, &#39;Georgia.ttf&#39;, &#39;Action.ttf&#39;]]
+        self._color &#x3D; color if color else random_color(0, 200, random.randint(220, 255))
+        self._width, self._height &#x3D; width, height
+
+    @classmethod
+    def instance(cls, width&#x3D;200, height&#x3D;75):
+        &quot;&quot;&quot;用于获取Captcha对象的类方法&quot;&quot;&quot;
+        prop_name &#x3D; f&#39;_instance_&#123;width&#125;_&#123;height&#125;&#39;
+        if not hasattr(cls, prop_name):
+            setattr(cls, prop_name, cls(width, height))
+        return getattr(cls, prop_name)
+
+    def _background(self):
+        &quot;&quot;&quot;绘制背景&quot;&quot;&quot;
+        Draw(self._image).rectangle([(0, 0), self._image.size],
+                                    fill&#x3D;random_color(230, 255))
+
+    def _smooth(self):
+        &quot;&quot;&quot;平滑图像&quot;&quot;&quot;
+        return self._image.filter(ImageFilter.SMOOTH)
+
+    def _curve(self, width&#x3D;4, number&#x3D;6, color&#x3D;None):
+        &quot;&quot;&quot;绘制曲线&quot;&quot;&quot;
+        dx, height &#x3D; self._image.size
+        dx &#x2F;&#x3D; number
+        path &#x3D; [(dx * i, random.randint(0, height))
+                for i in range(1, number)]
+        bcoefs &#x3D; Bezier().make_bezier(number - 1)
+        points &#x3D; []
+        for coefs in bcoefs:
+            points.append(tuple(sum([coef * p for coef, p in zip(coefs, ps)])
+                                for ps in zip(*path)))
+        Draw(self._image).line(points, fill&#x3D;color if color else self._color, width&#x3D;width)
+
+    def _noise(self, number&#x3D;50, level&#x3D;2, color&#x3D;None):
+        &quot;&quot;&quot;绘制扰码&quot;&quot;&quot;
+        width, height &#x3D; self._image.size
+        dx, dy &#x3D; width &#x2F; 10, height &#x2F; 10
+        width, height &#x3D; width - dx, height - dy
+        draw &#x3D; Draw(self._image)
+        for i in range(number):
+            x &#x3D; int(random.uniform(dx, width))
+            y &#x3D; int(random.uniform(dy, height))
+            draw.line(((x, y), (x + level, y)),
+                      fill&#x3D;color if color else self._color, width&#x3D;level)
+
+    def _text(self, captcha_text, fonts, font_sizes&#x3D;None, drawings&#x3D;None, squeeze_factor&#x3D;0.75, color&#x3D;None):
+        &quot;&quot;&quot;绘制文本&quot;&quot;&quot;
+        color &#x3D; color if color else self._color
+        fonts &#x3D; tuple([truetype(name, size)
+                       for name in fonts
+                       for size in font_sizes or (65, 70, 75)])
+        draw &#x3D; Draw(self._image)
+        char_images &#x3D; []
+        for c in captcha_text:
+            font &#x3D; random.choice(fonts)
+            c_width, c_height &#x3D; draw.textsize(c, font&#x3D;font)
+            char_image &#x3D; Image.new(&#39;RGB&#39;, (c_width, c_height), (0, 0, 0))
+            char_draw &#x3D; Draw(char_image)
+            char_draw.text((0, 0), c, font&#x3D;font, fill&#x3D;color)
+            char_image &#x3D; char_image.crop(char_image.getbbox())
+            for drawing in drawings:
+                d &#x3D; getattr(self, drawing)
+                char_image &#x3D; d(char_image)
+            char_images.append(char_image)
+        width, height &#x3D; self._image.size
+        offset &#x3D; int((width - sum(int(i.size[0] * squeeze_factor)
+                                  for i in char_images[:-1]) -
+                      char_images[-1].size[0]) &#x2F; 2)
+        for char_image in char_images:
+            c_width, c_height &#x3D; char_image.size
+            mask &#x3D; char_image.convert(&#39;L&#39;).point(lambda i: i * 1.97)
+            self._image.paste(char_image,
+                              (offset, int((height - c_height) &#x2F; 2)),
+                              mask)
+            offset +&#x3D; int(c_width * squeeze_factor)
+
+    @staticmethod
+    def _warp(image, dx_factor&#x3D;0.3, dy_factor&#x3D;0.3):
+        &quot;&quot;&quot;图像扭曲&quot;&quot;&quot;
+        width, height &#x3D; image.size
+        dx &#x3D; width * dx_factor
+        dy &#x3D; height * dy_factor
+        x1 &#x3D; int(random.uniform(-dx, dx))
+        y1 &#x3D; int(random.uniform(-dy, dy))
+        x2 &#x3D; int(random.uniform(-dx, dx))
+        y2 &#x3D; int(random.uniform(-dy, dy))
+        warp_image &#x3D; Image.new(
+            &#39;RGB&#39;,
+            (width + abs(x1) + abs(x2), height + abs(y1) + abs(y2)))
+        warp_image.paste(image, (abs(x1), abs(y1)))
+        width2, height2 &#x3D; warp_image.size
+        return warp_image.transform(
+            (width, height),
+            Image.QUAD,
+            (x1, y1, -x1, height2 - y2, width2 + x2, height2 + y2, width2 - x2, -y1))
+
+    @staticmethod
+    def _offset(image, dx_factor&#x3D;0.1, dy_factor&#x3D;0.2):
+        &quot;&quot;&quot;图像偏移&quot;&quot;&quot;
+        width, height &#x3D; image.size
+        dx &#x3D; int(random.random() * width * dx_factor)
+        dy &#x3D; int(random.random() * height * dy_factor)
+        offset_image &#x3D; Image.new(&#39;RGB&#39;, (width + dx, height + dy))
+        offset_image.paste(image, (dx, dy))
+        return offset_image
+
+    @staticmethod
+    def _rotate(image, angle&#x3D;25):
+        &quot;&quot;&quot;图像旋转&quot;&quot;&quot;
+        return image.rotate(random.uniform(-angle, angle),
+                            Image.BILINEAR, expand&#x3D;1)
+
+    def generate(self, captcha_text&#x3D;&#39;&#39;, fmt&#x3D;&#39;PNG&#39;):
+        &quot;&quot;&quot;生成验证码(文字和图片)
+        :param captcha_text: 验证码文字
+        :param fmt: 生成的验证码图片格式
+        :return: 验证码图片的二进制数据
+        &quot;&quot;&quot;
+        self._image &#x3D; Image.new(&#39;RGB&#39;, (self._width, self._height), (255, 255, 255))
+        self._background()
+        self._text(captcha_text, self._fonts,
+                   drawings&#x3D;[&#39;_warp&#39;, &#39;_rotate&#39;, &#39;_offset&#39;])
+        self._curve()
+        self._noise()
+        self._smooth()
+        image_bytes &#x3D; BytesIO()
+        self._image.save(image_bytes, format&#x3D;fmt)
+        return image_bytes.getvalue()
+
+
+def pascal_row(n&#x3D;0):
+    &quot;&quot;&quot;生成毕达哥拉斯三角形（杨辉三角）&quot;&quot;&quot;
+    result &#x3D; [1]
+    x, numerator &#x3D; 1, n
+    for denominator in range(1, n &#x2F;&#x2F; 2 + 1):
+        x *&#x3D; numerator
+        x &#x2F;&#x3D; denominator
+        result.append(x)
+        numerator -&#x3D; 1
+    if n &amp; 1 &#x3D;&#x3D; 0:
+        result.extend(reversed(result[:-1]))
+    else:
+        result.extend(reversed(result))
+    return result
+
+
+def random_color(start&#x3D;0, end&#x3D;255, opacity&#x3D;255):
+    &quot;&quot;&quot;获得随机颜色&quot;&quot;&quot;
+    red &#x3D; random.randint(start, end)
+    green &#x3D; random.randint(start, end)
+    blue &#x3D; random.randint(start, end)
+    if opacity is None:
+        return red, green, blue
+    return red, green, blue, opacity</code></pre>
+
+<blockquote>
+<p><strong>说明</strong>：上面的代码中用到了三个字体文件，字体文件位于<code>polls/fonts</code>目录下，大家可以自行添加字体文件，但是需要注意字体文件的文件名跟上面代码的第45行保持一致。</p>
+</blockquote>
+<p>接下来，我们先完成提供验证码的视图函数。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">def get_captcha(request: HttpRequest) -&gt; HttpResponse:
+    &quot;&quot;&quot;验证码&quot;&quot;&quot;
+    captcha_text &#x3D; gen_random_code()
+    request.session[&#39;captcha&#39;] &#x3D; captcha_text
+    image_data &#x3D; Captcha.instance().generate(captcha_text)
+    return HttpResponse(image_data, content_type&#x3D;&#39;image&#x2F;png&#39;)</code></pre>
+
+<p>注意上面代码中的第4行，我们将随机生成的验证码字符串保存到session中，稍后用户登录时，我们要将保存在session中的验证码字符串和用户输入的验证码字符串进行比对，如果用户输入了正确的验证码才能够执行后续的登录流程，代码如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">def login(request: HttpRequest) -&gt; HttpResponse:
+    hint &#x3D; &#39;&#39;
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
+        username &#x3D; request.POST.get(&#39;username&#39;)
+        password &#x3D; request.POST.get(&#39;password&#39;)
+        if username and password:
+            password &#x3D; gen_md5_digest(password)
+            user &#x3D; User.objects.filter(username&#x3D;username, password&#x3D;password).first()
+            if user:
+                request.session[&#39;userid&#39;] &#x3D; user.no
+                request.session[&#39;username&#39;] &#x3D; user.username
+                return redirect(&#39;&#x2F;&#39;)
+            else:
+                hint &#x3D; &#39;用户名或密码错误&#39;
+        else:
+            hint &#x3D; &#39;请输入有效的用户名和密码&#39;
+    return render(request, &#39;login.html&#39;, &#123;&#39;hint&#39;: hint&#125;)</code></pre>
+
+<blockquote>
+<p><strong>说明</strong>：上面的代码没有对用户名和密码没有进行验证，实际项目中建议使用正则表达式验证用户输入信息，否则有可能将无效的数据交给数据库进行处理或者造成其他安全方面的隐患。</p>
+</blockquote>
+<p>上面的代码中，我们设定了登录成功后会在session中保存用户的编号（<code>userid</code>）和用户名（<code>username</code>），页面会重定向到首页。接下来我们可以稍微对首页的代码进行调整，在页面的右上角显示出登录用户的用户名。我们将这段代码单独写成了一个名为header.html的HTML文件，首页中可以通过在<code>&lt;body&gt;</code>标签中添加<code>&#123;% include 'header.html' %&#125;</code>来包含这个页面，代码如下所示。</p>
+<pre class="language-HTML" data-language="HTML"><code class="language-HTML">&lt;div class&#x3D;&quot;user&quot;&gt;
+    &#123;% if request.session.userid %&#125;
+    &lt;span&gt;&#123;&#123; request.session.username &#125;&#125;&lt;&#x2F;span&gt;
+    &lt;a href&#x3D;&quot;&#x2F;logout&quot;&gt;注销&lt;&#x2F;a&gt;
+    &#123;% else %&#125;
+    &lt;a href&#x3D;&quot;&#x2F;login&quot;&gt;登录&lt;&#x2F;a&gt;&nbsp;&nbsp;
+    &#123;% endif %&#125;
+    &lt;a href&#x3D;&quot;&#x2F;register&quot;&gt;注册&lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;</code></pre>
+
+<p>如果用户没有登录，页面会显示登录和注册的超链接；而用户登录成功后，页面上会显示用户名和注销的链接，注销链接对应的视图函数如下所示，URL的映射与之前讲过的类似，不再赘述。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">def logout(request):
+    &quot;&quot;&quot;注销&quot;&quot;&quot;
+    request.session.flush()
+    return redirect(&#39;&#x2F;&#39;)</code></pre>
+
+<p>上面的代码通过session对象<code>flush</code>方法来销毁session，一方面清除了服务器上session对象保存的用户数据，一方面将保存在浏览器cookie中的sessionid删除掉，稍后我们会对如何读写cookie的操作加以说明。</p>
+<p>我们可以通过项目使用的数据库中名为<code>django_session</code> 的表来找到所有的session，该表的结构如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>session_key</th>
+<th>session_data</th>
+<th>expire_date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c9g2gt5cxo0k2evykgpejhic5ae7bfpl</td>
+<td>MmI4YzViYjJhOGMyMDJkY2M5Yzg3…</td>
+<td>2019-05-25 23:16:13.898522</td>
+</tr>
+</tbody></table>
+<p>其中，第1列就是浏览器cookie中保存的sessionid；第2列是经过BASE64编码后的session中的数据，如果使用Python的<code>base64</code>对其进行解码，解码的过程和结果如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">import base64
+
+base64.b64decode(&#39;MmI4YzViYjJhOGMyMDJkY2M5Yzg3ZWIyZGViZmUzYmYxNzdlNDdmZjp7ImNhcHRjaGEiOiJzS3d0Iiwibm8iOjEsInVzZXJuYW1lIjoiamFja2ZydWVkIn0&#x3D;&#39;)</code></pre>
+
+<p>第3列是session的过期时间，session过期后浏览器保存的cookie中的sessionid就会失效，但是数据库中的这条对应的记录仍然会存在，如果想清除过期的数据，可以使用下面的命令。</p>
+<pre class="language-Shell" data-language="Shell"><code class="language-Shell">python manage.py clearsessions</code></pre>
+
+<p>Django框架默认的session过期时间为两周（1209600秒），如果想修改这个时间，可以在项目的配置文件中添加如下所示的代码。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python"># 配置会话的超时时间为1天（86400秒）
+SESSION_COOKIE_AGE &#x3D; 86400</code></pre>
+
+<p>有很多对安全性要求较高的应用都必须在关闭浏览器窗口时让会话过期，不再保留用户的任何信息，如果希望在关闭浏览器窗口时就让会话过期（cookie中的sessionid失效），可以加入如下所示的配置。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python"># 设置为True在关闭浏览器窗口时session就过期
+SESSION_EXPIRE_AT_BROWSER_CLOSE &#x3D; True</code></pre>
+
+<p>如果不希望将session的数据保存在数据库中，可以将其放入缓存中，对应的配置如下所示，缓存的配置和使用我们在后面讲解。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python"># 配置将会话对象放到缓存中存储
+SESSION_ENGINE &#x3D; &#39;django.contrib.sessions.backends.cache&#39;
+# 配置使用哪一组缓存来保存会话
+SESSION_CACHE_ALIAS &#x3D; &#39;default&#39;</code></pre>
+
+<p>如果要修改session数据默认的序列化方式，可以将默认的<code>JSONSerializer</code>修改为<code>PickleSerializer</code>。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">SESSION_SERIALIZER &#x3D; &#39;django.contrib.sessions.serializers.PickleSerializer&#39;</code></pre>
+
+<p>接下来，我们就可以限制只有登录用户才能为老师投票，修改后的<code>praise_or_criticize</code>函数如下所示，我们通过从<code>request.session</code>中获取<code>userid</code>来判定用户是否登录。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">def praise_or_criticize(request: HttpRequest) -&gt; HttpResponse:
+    if request.session.get(&#39;userid&#39;):
+        try:
+            tno &#x3D; int(request.GET.get(&#39;tno&#39;))
+            teacher &#x3D; Teacher.objects.get(no&#x3D;tno)
+            if request.path.startswith(&#39;&#x2F;praise&#x2F;&#39;):
+                teacher.good_count +&#x3D; 1
+                count &#x3D; teacher.good_count
+            else:
+                teacher.bad_count +&#x3D; 1
+                count &#x3D; teacher.bad_count
+            teacher.save()
+            data &#x3D; &#123;&#39;code&#39;: 20000, &#39;mesg&#39;: &#39;投票成功&#39;, &#39;count&#39;: count&#125;
+        except (ValueError, Teacher.DoesNotExist):
+            data &#x3D; &#123;&#39;code&#39;: 20001, &#39;mesg&#39;: &#39;投票失败&#39;&#125;
+    else:
+        data &#x3D; &#123;&#39;code&#39;: 20002, &#39;mesg&#39;: &#39;请先登录&#39;&#125;
+    return JsonResponse(data)</code></pre>
+
+<p>当然，在修改了视图函数后，<code>teachers.html</code>也需要进行调整，用户如果没有登录，就将用户引导至登录页，登录成功再返回到投票页，此处不再赘述。</p>
+<h3 id="在视图函数中读写cookie"><a href="#在视图函数中读写cookie" class="headerlink" title="在视图函数中读写cookie"></a>在视图函数中读写cookie</h3><p>下面我们对如何使用cookie做一个更为细致的说明以便帮助大家在Web项目中更好的使用这项技术。Django封装的<code>HttpRequest</code>和<code>HttpResponse</code>对象分别提供了读写cookie的操作。</p>
+<p>HttpRequest封装的属性和方法：</p>
+<ol>
+<li><code>COOKIES</code>属性 - 该属性包含了HTTP请求携带的所有cookie。</li>
+<li><code>get_signed_cookie</code>方法 - 获取带签名的cookie，如果签名验证失败，会产生<code>BadSignature</code>异常。</li>
+</ol>
+<p>HttpResponse封装的方法：</p>
+<ol>
+<li><code>set_cookie</code>方法 - 该方法可以设置一组键值对并将其最终将写入浏览器。</li>
+<li><code>set_signed_cookie</code>方法 - 跟上面的方法作用相似，但是会对cookie进行签名来达到防篡改的作用。因为如果篡改了cookie中的数据，在不知道<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AF%86%E9%92%A5">密钥</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9B%90_(%E5%AF%86%E7%A0%81%E5%AD%A6)">盐</a>的情况下是无法生成有效的签名，这样服务器在读取cookie时会发现数据与签名不一致从而产生<code>BadSignature</code>异常。需要说明的是，这里所说的密钥就是我们在Django项目配置文件中指定的<code>SECRET_KEY</code>，而盐是程序中设定的一个字符串，你愿意设定为什么都可以，只要是一个有效的字符串。</li>
+</ol>
+<p>上面提到的方法，如果不清楚它们的具体用法，可以自己查阅一下Django的<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/2.1/ref/request-response/">官方文档</a>，没有什么资料比官方文档能够更清楚的告诉你这些方法到底如何使用。</p>
+<p>刚才我们说过了，激活<code>SessionMiddleware</code>之后，每个<code>HttpRequest</code>对象都会绑定一个session属性，它是一个类似字典的对象，除了保存用户数据之外还提供了检测浏览器是否支持cookie的方法，包括：</p>
+<ol>
+<li><code>set_test_cookie</code>方法 - 设置用于测试的cookie。</li>
+<li><code>test_cookie_worked</code>方法 - 检测测试cookie是否工作。</li>
+<li><code>delete_test_cookie</code>方法 - 删除用于测试的cookie。</li>
+<li><code>set_expiry</code>方法 - 设置会话的过期时间。</li>
+<li><code>get_expire_age</code>&#x2F;<code>get_expire_date</code>方法 - 获取会话的过期时间。</li>
+<li><code>clear_expired</code>方法 - 清理过期的会话。</li>
+</ol>
+<p>下面是在执行登录之前检查浏览器是否支持cookie的代码。通常情况下，浏览器默认开启了对cookie的支持，但是可能因为某种原因，用户禁用了浏览器的cookie功能，遇到这种情况我们可以在视图函数中提供一个检查功能，如果检查到用户浏览器不支持cookie，可以给出相应的提示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">def login(request):
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
+        if request.session.test_cookie_worked():
+            request.session.delete_test_cookie()
+            # Add your code to perform login process here
+        else:
+            return HttpResponse(&quot;Please enable cookies and try again.&quot;)
+    request.session.set_test_cookie()
+    return render_to_response(&#39;login.html&#39;)</code></pre>
+
+<h3 id="Cookie的替代品"><a href="#Cookie的替代品" class="headerlink" title="Cookie的替代品"></a>Cookie的替代品</h3><p>之前我们说过了，cookie的名声一直都不怎么好，当然我们在实际开发中是不会在cookie中保存用户的敏感信息（如用户的密码、信用卡的账号等）的，而且保存在cookie中的数据一般也会做好编码和签名的工作。对于支持HTML5的浏览器来说，可以使用localStorage和sessionStorage做为cookie的替代方案，相信从名字上你就能听出二者的差别，存储在<code>localStorage</code>的数据可以长期保留；而存储在<code>sessionStorage</code>的数据会在浏览器关闭时会被清除 。关于这些cookie替代品的用法，建议大家查阅<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web">MDN</a>来进行了解。 </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Heuwst</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://wstcly.xyz/2024/07/01/49.cookie-he-session/">http://wstcly.xyz/2024/07/01/49.cookie-he-session/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Heuwst</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">Python学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/07/01/48.jing-tai-zi-yuan-he-ajax-qing-qiu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="48.静态资源和Ajax请求">
+                        
+                        <span class="card-title">48.静态资源和Ajax请求</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/07/01/50.zhi-zuo-bao-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="50.制作报表">
+                        
+                        <span class="card-title">50.制作报表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024</span>
+            
+            <a href="/about" target="_blank">Heuwst</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">329.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://wstcly.xyz"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

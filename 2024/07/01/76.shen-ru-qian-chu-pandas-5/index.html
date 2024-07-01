@@ -1,0 +1,1317 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="76.深入浅出pandas-5, heuwst">
+    <meta name="description" content="深入浅出pandas-5我们再来补充一些使用DataFrame做数据分析时会使用到的操作，这些操作不仅常见而且也非常重要。
+计算同比环比我们之前讲过一个统计月度销售额的例子，我们可以通过groupby方法做分组聚合，也可以通过pivot_t">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>76.深入浅出pandas-5 | wstのBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="wstのBlog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">wstのBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">wstのBlog</div>
+        <div class="logo-desc">
+            
+            a simple blog
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/githubwst/" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/githubwst/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">76.深入浅出pandas-5</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">Python学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="深入浅出pandas-5"><a href="#深入浅出pandas-5" class="headerlink" title="深入浅出pandas-5"></a>深入浅出pandas-5</h2><p>我们再来补充一些使用<code>DataFrame</code>做数据分析时会使用到的操作，这些操作不仅常见而且也非常重要。</p>
+<h3 id="计算同比环比"><a href="#计算同比环比" class="headerlink" title="计算同比环比"></a>计算同比环比</h3><p>我们之前讲过一个统计月度销售额的例子，我们可以通过<code>groupby</code>方法做分组聚合，也可以通过<code>pivot_table</code>生成透视表，如下所示。</p>
+<pre class="language-python" data-language="python"><code class="language-python">sales_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">'data/2020年销售数据.xlsx'</span><span class="token punctuation">)</span>
+sales_df<span class="token punctuation">[</span><span class="token string">'月份'</span><span class="token punctuation">]</span> <span class="token operator">=</span> sales_df<span class="token punctuation">.</span>销售日期<span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
+sales_df<span class="token punctuation">[</span><span class="token string">'销售额'</span><span class="token punctuation">]</span> <span class="token operator">=</span> sales_df<span class="token punctuation">.</span>售价 <span class="token operator">*</span> sales_df<span class="token punctuation">.</span>销售数量
+result_df <span class="token operator">=</span> sales_df<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token string">'月份'</span><span class="token punctuation">,</span> values<span class="token operator">=</span><span class="token string">'销售额'</span><span class="token punctuation">,</span> aggfunc<span class="token operator">=</span><span class="token string">'sum'</span><span class="token punctuation">)</span>
+result_df<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'销售额'</span><span class="token punctuation">:</span> <span class="token string">'本月销售额'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+result_df</code></pre>
+
+<p>输出：</p>
+<pre class="language-none"><code class="language-none">      本月销售额
+月份         
+1       5409855
+2       4608455
+3       4164972
+4       3996770
+5       3239005
+6       2817936
+7       3501304
+8       2948189
+9       2632960
+10      2375385
+11      2385283
+12      1691973</code></pre>
+
+<p>在得到月度销售额之后，如果我们需要计算月环比，这里有两种方案。第一种方案是我们可以使用<code>shift</code>方法对数据进行移动，将上一个月的数据与本月数据对齐，然后通过<code>(本月销售额 - 上月销售额) / 上月销售额</code>来计算月环比，代码如下所示。</p>
+<pre class="language-python" data-language="python"><code class="language-python">result_df<span class="token punctuation">[</span><span class="token string">'上月销售额'</span><span class="token punctuation">]</span> <span class="token operator">=</span> result_df<span class="token punctuation">.</span>本月销售额<span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+result_df</code></pre>
+
+<p>输出：</p>
+<pre class="language-none"><code class="language-none">      本月销售额      上月销售额
+月份                    
+1       5409855            NaN
+2       4608455      5409855.0
+3       4164972      4608455.0
+4       3996770      4164972.0
+5       3239005      3996770.0
+6       2817936      3239005.0
+7       3501304      2817936.0
+8       2948189      3501304.0
+9       2632960      2948189.0
+10      2375385      2632960.0
+11      2385283      2375385.0
+12      1691973      2385283.0</code></pre>
+
+<p>在上面的例子中，<code>shift</code>方法的参数为<code>1</code>表示将数据向下移动一个单元，当然我们可以使用参数<code>-1</code>将数据向上移动一个单元。相信大家能够想到，如果我们有更多年份的数据，我们可以将参数设置为<code>12</code>，这样就可以计算今年的每个月与去年的每个月之间的同比。</p>
+<pre class="language-python" data-language="python"><code class="language-python">result_df<span class="token punctuation">[</span><span class="token string">'环比'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>result_df<span class="token punctuation">.</span>本月销售额 <span class="token operator">-</span> result_df<span class="token punctuation">.</span>上月销售额<span class="token punctuation">)</span> <span class="token operator">/</span> result_df<span class="token punctuation">.</span>上月销售额
+result_df<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>
+    formatter<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'上月销售额'</span><span class="token punctuation">:</span> <span class="token string">'&#123;:.0f&#125;'</span><span class="token punctuation">,</span> <span class="token string">'环比'</span><span class="token punctuation">:</span> <span class="token string">'&#123;:.2%&#125;'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    na_rep<span class="token operator">=</span><span class="token string">'--------'</span>
+<span class="token punctuation">)</span></code></pre>
+
+<p>输出：</p>
+<pre class="language-none"><code class="language-none">      本月销售额      上月销售额         环比
+月份                    
+1       5409855       --------     -------- 
+2       4608455        5409855      -14.81%     
+3       4164972        4608455       -9.62%
+4       3996770        4164972       -4.04%
+5       3239005        3996770      -18.96%
+6       2817936        3239005      -13.00%
+7       3501304        2817936       24.25%
+8       2948189        3501304      -15.80%
+9       2632960        2948189      -10.69%
+10      2375385        2632960       -9.78%
+11      2385283        2375385        0.42%
+12      1691973        2385283      -29.07%</code></pre>
+
+<blockquote>
+<p><strong>说明</strong>：使用 JupyterLab 时，可以通过<code>DataFrame</code>对象的<code>style</code>属性在网页中对其进行渲染，上面的代码通过<code>Styler</code>对象的<code>format</code>方法将环比格式化为百分比进行显示，此外还指定了将空值替换为<code>--------</code>。</p>
+</blockquote>
+<p>更为简单的第二种方案是直接使用<code>pct_change</code>方法计算变化的百分比，我们先将之前的上月销售额和环比列删除掉。</p>
+<pre class="language-python" data-language="python"><code class="language-python">result_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'上月销售额'</span><span class="token punctuation">,</span> <span class="token string">'环比'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+
+<p>接下来，我们使用<code>DataFrame</code>对象的<code>pct_change</code>方法完成环比的计算。值得一提的是，<code>pct_change</code>方法有一个名为<code>periods</code>的参数，它的默认值是<code>1</code>，计算相邻两项数据变化的百分比，这不就是我们想要的环比吗？如果我们有很多年的数据，在计算时把这个参数的值修改为<code>12</code>，就可以得到相邻两年的月同比。</p>
+<pre class="language-python" data-language="python"><code class="language-python">result_df<span class="token punctuation">[</span><span class="token string">'环比'</span><span class="token punctuation">]</span> <span class="token operator">=</span> result_df<span class="token punctuation">.</span>pct_change<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result_df</code></pre>
+
+<h3 id="窗口计算"><a href="#窗口计算" class="headerlink" title="窗口计算"></a>窗口计算</h3><p><code>DataFrame</code>对象的<code>rolling</code>方法允许我们将数据置于窗口中，然后用函数对窗口中的数据进行运算和处理。例如，我们获取了某只股票近期的数据，想制作5日均线和10日均线，那么就需要先设置窗口再进行运算。我们先用如下所示的代码读取2022年百度的股票数据，数据文件可以通过下面的链接来获取。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">baidu_df &#x3D; pd.read_excel(&#39;data&#x2F;2022年股票数据.xlsx&#39;, sheet_name&#x3D;&#39;BIDU&#39;)
+baidu_df.sort_index(inplace&#x3D;True)
+baidu_df</code></pre>
+
+<p>输出：</p>
+<img src="res/baidu_stock.png" style="zoom:50%;">
+
+<p>上面的<code>DataFrame</code>有<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code>五个列，分别代表股票的开盘价、最高价、最低价、收盘价和成交量，接下来我们对百度的股票数据进行窗口计算。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">baidu_df.rolling(5).mean()</code></pre>
+
+<p>输出：</p>
+<img src="res/baidu_stock_ma5.png" style="zoom:50%;">
+
+<p>我们也可以在<code>Series</code>上使用<code>rolling</code>设置窗口并在窗口内完成运算，例如我们可以对上面的百度股票收盘价（<code>Close</code>列）计算5日均线和10日均线，并使用<code>merge</code>函数将其组装到一个<code>DataFrame</code>对象中并绘制出双均线图，代码如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">close_ma5 &#x3D; baidu_df.Close.rolling(5).mean()
+close_ma10 &#x3D; baidu_df.Close.rolling(10).mean()
+result_df &#x3D; pd.merge(close_ma5, close_ma10, left_index&#x3D;True, right_index&#x3D;True)
+result_df.rename(columns&#x3D;&#123;&#39;Close_x&#39;: &#39;MA5&#39;, &#39;Close_y&#39;: &#39;MA10&#39;&#125;, inplace&#x3D;True)
+result_df.plot(kind&#x3D;&#39;line&#39;, figsize&#x3D;(10, 6))
+plt.show()</code></pre>
+
+<p>输出：</p>
+<img src="res/baidu_double_MA.png" style="zoom:50%;">
+
+<h3 id="相关性判定"><a href="#相关性判定" class="headerlink" title="相关性判定"></a>相关性判定</h3><p>在统计学中，我们通常使用协方差（covariance）来衡量两个随机变量的联合变化程度。如果变量 $X$ 的较大值主要与另一个变量 $Y$ 的较大值相对应，而两者较小值也相对应，那么两个变量倾向于表现出相似的行为，协方差为正。如果一个变量的较大值主要对应于另一个变量的较小值，则两个变量倾向于表现出相反的行为，协方差为负。简单的说，协方差的正负号显示着两个变量的相关性。方差是协方差的一种特殊情况，即变量与自身的协方差。</p>
+<p>$$<br>cov(X,Y) &#x3D; E((X - \mu)(Y - \upsilon)) &#x3D; E(X \cdot Y) - \mu\upsilon<br>$$</p>
+<p>如果 $X$ 和 $Y$ 是统计独立的，那么二者的协方差为0，这是因为在 $X$ 和 $Y$ 独立的情况下：</p>
+<p>$$<br>E(X \cdot Y) &#x3D; E(X) \cdot E(Y) &#x3D; \mu\upsilon<br>$$</p>
+<p>协方差的数值大小取决于变量的大小，通常是不容易解释的，但是正态形式的协方差可以显示两变量线性关系的强弱。在统计学中，皮尔逊积矩相关系数就是正态形式的协方差，它用于度量两个变量 $X$ 和 $Y$ 之间的相关程度（线性相关），其值介于<code>-1</code>到<code>1</code>之间。</p>
+<p>$$<br>\frac {cov(X, Y)} {\sigma_{X}\sigma_{Y}}<br>$$</p>
+<p>估算样本的协方差和标准差，可以得到样本皮尔逊系数，通常用希腊字母 $\rho$ 表示。</p>
+<p>$$<br>\rho &#x3D; \frac {\sum_{i&#x3D;1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})} {\sqrt{\sum_{i&#x3D;1}^{n}(X_i - \bar{X})^2} \sqrt{\sum_{i&#x3D;1}^{n}(Y_i - \bar{Y})^2}}<br>$$</p>
+<p>我们用 $\rho$ 值判断指标的相关性时遵循以下两个步骤。</p>
+<ol>
+<li>判断指标间是正相关、负相关，还是不相关。<ul>
+<li>当 $ \rho \gt 0 $，认为变量之间是正相关，也就是两者的趋势一致。</li>
+<li>当 $ \rho \lt 0 $，认为变量之间是负相关，也就是两者的趋势相反。</li>
+<li>当 $ \rho \approx 0 $，认为变量之间是不相关的，但并不代表两个指标是统计独立的。</li>
+</ul>
+</li>
+<li>判断指标间的相关程度。<ul>
+<li>当 $ \rho $ 的绝对值在 $ [0.6,1] $ 之间，认为变量之间是强相关的。</li>
+<li>当 $ \rho $ 的绝对值在 $ [0.1,0.6) $ 之间，认为变量之间是弱相关的。</li>
+<li>当 $ \rho $ 的绝对值在 $ [0,0.1) $ 之间，认为变量之间没有相关性。</li>
+</ul>
+</li>
+</ol>
+<p>皮尔逊相关系数适用于：</p>
+<ol>
+<li>两个变量之间是线性关系，都是连续数据。</li>
+<li>两个变量的总体是正态分布，或接近正态的单峰分布。</li>
+<li>两个变量的观测值是成对的，每对观测值之间相互独立。</li>
+</ol>
+<p>这里，我们顺便说一下，如果两组变量并不是来自于正态总体的连续值，我们该如何判断相关性呢？对于定序尺度（等级），我们可以使用斯皮尔曼秩相关系数，其计算公式如下所示：<br>$$<br>r_{s}&#x3D;1-{\frac {6\sum d_{i}^{2}}{n(n^{2}-1)}}<br>$$<br>其中，$d_{i}&#x3D;\operatorname {R} (X_{i})-\operatorname {R} (Y_{i})$，即每组观测中两个变量的等级差值，$n$为观测样本数。</p>
+<p>对于定类尺度（类别），我们可以使用卡方检验的方式来判定其是否相关。其实很多时候，连续值也可以通过分箱的方式处理成离散的等级或类别，然后使用斯皮尔曼秩相关系数或卡方检验的方式来判定相关性。</p>
+<p><code>DataFrame</code>对象的<code>cov</code>方法和<code>corr</code>方法分别用于计算协方差和相关系数，<code>corr</code>方法有一个名为<code>method</code>的参数，其默认值是<code>pearson</code>，表示计算皮尔逊相关系数；除此之外，还可以指定<code>kendall</code>或<code>spearman</code>来计算肯德尔系数或斯皮尔曼秩相关系数。</p>
+<p>我们从名为<code>boston_house_price.csv</code>的文件中获取著名的波士顿房价数据集来创建一个<code>DataFrame</code>。</p>
+<pre class="language-python" data-language="python"><code class="language-python">boston_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data/boston_house_price.csv'</span><span class="token punctuation">)</span>
+boston_df</code></pre>
+
+<p>输出：</p>
+<img src="/Users/Hao/Desktop/Python-Data-Analysis/res/boston_house_price.png" style="zoom:50%;">
+
+<blockquote>
+<p><strong>说明</strong>：上面代码中使用了相对路径来访问 CSV 文件，也就是说 CSV 文件在当前工作路径下名为<code>data</code>的文件夹中。如果需要上面例子中的 CSV 文件，可以通过下面的百度云盘地址进行获取。链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g?pwd=e7b4">https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g?pwd=e7b4</a>，提取码：e7b4。</p>
+</blockquote>
+<p>可以看出，该数据集中包含了诸多影响房价的特征，包括犯罪率、一氧化氮浓度、平均房间数、低收入人群占比等，其中<code>PRICE</code>代表房价，具体情况如下所示。</p>
+<img src="res/boston_house_price_features.png" style="zoom:50%;">
+
+<p>接下来，我们将其中可以视为来自于正态总体的连续值，通过<code>corr</code>方法计算皮尔逊相关系数，看看哪些跟房价是正相关或负相关的关系，代码如下所示。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">boston_df[[&#39;NOX&#39;, &#39;RM&#39;, &#39;PTRATIO&#39;, &#39;LSTAT&#39;, &#39;PRICE&#39;]].corr()</code></pre>
+
+<p>输出：</p>
+<img src="res/boston_person_correlation.png" style="zoom:50%;">
+
+<p>可以看出，平均房间数（<code>RM</code>）跟房价有较强的正相关性，而低收入人群占比（<code>LSTAT</code>）跟房价之间存在明显的负相关性。</p>
+<p>斯皮尔曼秩相关系数对数据条件的要求没有皮尔逊相关系数严格，只要两个变量的观测值是成对的等级数据，或者是由连续变量转化成等级的数据，不论两个变量的总体分布形态、样本容量的大小如何，都可以用斯皮尔曼等级相关系数来进行研究。我们可以通过下面的方式对部分特征进行预处理，然后计算斯皮尔曼秩相关系数。</p>
+<pre class="language-Python" data-language="Python"><code class="language-Python">boston_df[&#39;CRIM&#39;] &#x3D; boston_df.CRIM.apply(lambda x: x &#x2F;&#x2F; 5 if x &lt; 25 else 5).map(int)
+boston_df[&#39;ZN&#39;] &#x3D; pd.qcut(boston_df.ZN, q&#x3D;[0, 0.75, 0.8, 0.85, 0.9, 0.95, 1], labels&#x3D;np.arange(6))
+boston_df[&#39;AGE&#39;] &#x3D; (boston_df.AGE &#x2F;&#x2F; 20).map(int)
+boston_df[&#39;DIS&#39;] &#x3D; (boston_df.DIS &#x2F;&#x2F; 2.05).map(int)
+boston_df[&#39;B&#39;] &#x3D; (boston_df.B &#x2F;&#x2F; 66).map(int)
+boston_df[&#39;PRICE&#39;] &#x3D; pd.qcut(boston_df.PRICE, q&#x3D;[0, 0.15, 0.3, 0.5, 0.7, 0.85, 1], labels&#x3D;np.arange(6))
+boston_df[[&#39;CRIM&#39;, &#39;ZN&#39;, &#39;AGE&#39;, &#39;DIS&#39;, &#39;B&#39;, &#39;PRICE&#39;]].corr(method&#x3D;&#39;spearman&#39;)</code></pre>
+
+<p>输出：</p>
+<img src="res/boston_spearman_correlation.png" style="zoom:50%;">
+
+<p>可以看出，房价跟犯罪率（<code>CRIM</code>）和房龄（<code>AGE</code>）之间存在较为明显的负相关关系，跟住房用地尺寸（<code>ZN</code>）存在微弱的正相关关系。相关性可以帮助我们在实际工作中找到业务抓手，即找到那些能够影响或改变工作结果的相关因素。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Heuwst</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://wstcly.xyz/2024/07/01/76.shen-ru-qian-chu-pandas-5/">http://wstcly.xyz/2024/07/01/76.shen-ru-qian-chu-pandas-5/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Heuwst</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">Python学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/07/01/75.shen-ru-qian-chu-pandas-4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="75.深入浅出pandas-4">
+                        
+                        <span class="card-title">75.深入浅出pandas-4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/07/01/77.shen-ru-qian-chu-pandas-6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="77.深入浅出pandas-6">
+                        
+                        <span class="card-title">77.深入浅出pandas-6</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">Python学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024</span>
+            
+            <a href="/about" target="_blank">Heuwst</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">329.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://wstcly.xyz"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
